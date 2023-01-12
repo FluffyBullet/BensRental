@@ -1,0 +1,1 @@
+web: gunicorn caravan_rental.wsgi

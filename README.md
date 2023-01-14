@@ -3,24 +3,24 @@
 1. [Introduction](#introduction)
     * [deployed website](#deployed)
     * [Github Repo](#github)
-2. [Breakdown/Approach](#approach)
-3. [Requirements](#requirements)
-4. [User Stories](#user-stories)
-5. [Design](#design)
+1. [Breakdown/Approach](#approach)
+1. [Requirements](#requirements)
+1. [User Stories](#user-stories)
+1. [Design](#design)
     * [Template Layout](#template-layout)
     * [Data Table(s)](#data-tables)
-5. [Testing](#testing)
+1. [Testing](#testing)
     * [Test Driven Development](#test-driven-development-tdd)
     * [Behaviour Driven Development](#behaviour-driven-development-bdd)
-6. [Bugs and Fixes](#bugs)
+1. [Bugs and Fixes](#bugs)
     * [Bugs to be fixed](#bugs-to-be-fixed)
     * [Bugs fixed](#bugs-fixed)
-7. [Dev Log](#dev-log)
+1. [Dev Log](#dev-log)
     * [Deployment](#deployment)
     * [Creating a copy](#creating-a-copy)
     * [Progression log](#progression-log)
-8. [Acknowledgements](#acknowledgements)
-9. [References](#references)
+1. [Acknowledgements](#acknowledgements)
+1. [References](#references)
     * [Languages, Libriaries and Frameworks used](#languages-libraries-and-frameworks-used)
     * [Code sources](#code-sources)
     * [Information/Influence](#informationinfluence)
@@ -37,6 +37,19 @@ Users will have the ability to check availability of weeks available, History of
 
 ****
 ## Approach
+
+Looking at the project scope, users expect a simple and easy to use interface to:
+
+1. Find information (Location, Availability)
+
+1. Make a Booking or Cancellation
+
+1. Log in to find account information.
+
+To get a good understanding of the flow of information, I will first look over multiple websites offering overnight stay, alternative days and rental of accomodation.
+
+Also conduct a Q&A Session with the owner of mentioned caravan to ensure my envisaged and expected information overlaps or includes all relevant information. This session is also used to expand my selection of informaton for what may be helpful at a later stage.
+ 
 ****
 ## Requirements
 ****

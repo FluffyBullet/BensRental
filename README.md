@@ -70,7 +70,29 @@ Creating of a To-Do list for the owner of the caravan with pre-made alerts based
 An authorisation algorithm to avoid end users from creating duplicate accounts and double booking the caravan with a confirmed or in query stay.
 
 ****
+
 ## User Stories
+
+### For Users:
+
+As a User, I:
+1. Want to see what days are avaialble to be booked
+1. What the caravan looks like, Internally and Externally
+1. Contact the owner with queries regarding the Caravan/my booking
+1. Create an Account to book holiday's
+1. Book a stay via the website
+1. See the Weather forecast for a day/week (API with weather site, added as a condition - may need to be added at a later date)
+1. View my historic visits/bookings and personal notes for the trips.
+1. Have quick access to links where the accomodation may be advertised
+
+### For Owners:
+
+As an owner, I:
+1. Wish to view contact details of accounts who have booked my caravan.
+1. Approve or Remove post from general comments
+1. Add personal notes to holiday makers accounts for myself or other owners
+1. Book out my accomodation for holiday's made via other websites
+
 ****
 ## Design
 ****

@@ -36,6 +36,7 @@ Owners of the holiday home will have the ability to accept or refuse the request
 Users will have the ability to check availability of weeks available, History of visits, adding general feedback to be displayed on the main page and personal notes on previous visits i.e specific stores, attractions.
 
 ****
+
 ## Approach
 
 Looking at the project scope, users expect a simple and easy to use interface to:
@@ -49,9 +50,25 @@ Looking at the project scope, users expect a simple and easy to use interface to
 To get a good understanding of the flow of information, I will first look over multiple websites offering overnight stay, alternative days and rental of accomodation.
 
 Also conduct a Q&A Session with the owner of mentioned caravan to ensure my envisaged and expected information overlaps or includes all relevant information. This session is also used to expand my selection of informaton for what may be helpful at a later stage.
- 
+
 ****
+
 ## Requirements
+
+For the website to display information to all users without manually editing an availability panel on the main website - this will need use of a Database, automatically updating.
+
+The caravan owner will need a record of information to advise who is hiring the caravan and how to make contact with them. To log this, the above mentioned Database will include a table of information from the user, but retrived from the hirer's profile.
+
+For a hirer to request for rental period of the caravan, the website will need to host the ability to create profiles, which include name, address, contact details.
+
+The user of the site will also have the ability to logging their own personal notes and overal rating comments for their recently visited trip. Another table will be made on the above database allowing comments for everyone to see with a rating, then also a personal comment section for trips and visits.
+
+A display of images of the caravan available for hire, to showcase the accomodation's features space and expectation.
+
+Creating of a To-Do list for the owner of the caravan with pre-made alerts based of hirer's start date to request money, send site information and end date to arrange cleaner, add ability to comment on their stay and more.
+
+An authorisation algorithm to avoid end users from creating duplicate accounts and double booking the caravan with a confirmed or in query stay.
+
 ****
 ## User Stories
 ****

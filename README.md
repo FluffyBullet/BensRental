@@ -84,6 +84,7 @@ As a User, I:
 1. See the Weather forecast for a day/week (API with weather site, added as a condition - may need to be added at a later date)
 1. View my historic visits/bookings and personal notes for the trips.
 1. Have quick access to links where the accomodation may be advertised
+1. Wish to update my details stored on my profile
 
 ### For Owners:
 

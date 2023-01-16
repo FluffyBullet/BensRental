@@ -96,6 +96,19 @@ As an owner, I:
 
 ****
 ## Design
+
+For an overview and comparison of websites avaialble, I visit a host of sites offering bookings and holiday's alike for understanding of layout etc.
+also linked below in [References](#references), websites I used to study their design and create my idea's are as follows:
+
+1. [momondo](https://www.momondo.co.uk/packages)
+1. [Airbnb](https://www.airbnb.co.uk)
+1. [Booking.com](https://booking-dp.lastminute.com/?token=TKvXM_jtvLchrJlmj0DdgwMIW0HZzYtISeyNMfc47YQxNjczOTA4NDkz&aid=304142)
+1. [Tui](https://www.tui.co.uk/destinations/deals)
+
+All above listed websites and others found have similar displays with icon images of offers and selection dates for bookings at the top for filtering. However, as my site is focusing on the individual rental of a caravan, I will be looking at a feature rather than variety. For this, I took furhter inspiration from [Accuweather in my local area with a monthly display](https://www.accuweather.com/en/gb/nuneaton/cv11-4/january-weather/331362). When reducing the screen to mobile sizing, I found although the website removes the advertisement column the dates are still squashed, making me re-design the display in smaller displays.
+
+For this, I chose to display as a "pill" capsule with week reference rather than the 30 day calendar. 
+
 ****
 ### Template Layout
 ### Data Tables

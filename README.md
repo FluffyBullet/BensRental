@@ -89,11 +89,20 @@ As a User, I:
 ### For Owners:
 
 As an owner, I:
-1. Send confirmation details of booking and including banking
 1. Wish to view contact details of accounts who have booked my caravan.
 1. Approve or Remove post from general comments
 1. Add personal notes to holiday makers accounts for myself or other owners
 1. Book out my accomodation for holiday's made via other websites
+1. Create a "todo" list which include the following taks:
+    * Send response email with dates and bank details, with T&C's
+    * Check for deposit payment and forward receipt
+    * Update spreadsheet with booking and other websites
+    * Advise Cleaner of new holiday dates and upcoming requirements
+    * Chase for balance of payment 6 weeks before start date
+    * Remind Cleaner closer to time of booking
+    * Forward combination lock code 1 day before start date
+    * Return security deposit with thank you message
+    * Follow up with e-mail requesting feedback
 
 ****
 ## Design

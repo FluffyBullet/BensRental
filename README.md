@@ -8,6 +8,7 @@
 1. [User Stories](#user-stories)
 1. [Design](#design)
     * [Template Layout](#template-layout)
+        * [Mobile](#mobile-first)
     * [Data Table(s)](#data-tables)
 1. [Testing](#testing)
     * [Test Driven Development](#test-driven-development-tdd)
@@ -121,6 +122,19 @@ For this, I chose to display as a "pill" capsule with week reference rather than
 
 ****
 ### Template Layout
+
+#### Mobile First
+
+As a mobile first approach, I have created wireframes using website [www.app.uizard.io](https://app.uizard.io) for small displays. On completion of the app, I will later revise suitability for medium (Tablet) and large (Monitor) screens.
+
+| Page | Details | Visual Display |
+|---|---|---|
+| Home Page |To include information of the property owner and location/map of site | <img src="assets/images/readme_images/small_home_page.png" width="150px">|
+| Details Page |To include images of caravan and reviews by users | <img src="assets/images/readme_images/small_details_page.png" width="150px">|
+| Calendar Page |Colour feedback for available weeks with brief details| <img src="assets/images/readme_images/small_calendar_page.png" width="150px">|
+| Booking Page |Form with pre-generated text and enabling users to edit further requirements. | <img src="assets/images/readme_images/small_booking_page.png" width="150px">|
+| Holidays Page |Page for users to view confirmed holiday's and upcoming, with their comments on events visited. | <img src="assets/images/readme_images/small_holidays_page.png" width="150px">|
+
 ### Data Tables
 ****
 ## Testing

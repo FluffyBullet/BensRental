@@ -89,6 +89,7 @@ As a User, I:
 ### For Owners:
 
 As an owner, I:
+1. Send confirmation details of booking and including banking
 1. Wish to view contact details of accounts who have booked my caravan.
 1. Approve or Remove post from general comments
 1. Add personal notes to holiday makers accounts for myself or other owners
@@ -133,4 +134,4 @@ For this, I chose to display as a "pill" capsule with week reference rather than
 ### Code Sources
 ### Information/Influence
 #### [DirectHolidayHomes](https://www.directholidayhomes.co.uk/isle-of-wight/whitecliff_bay/9261)
-#### [Air-BnB]()
+#### [Air-BnB](https://www.airbnb.co.uk/rooms/724593970566123396?check_out=2023-04-23&children=1&adults=2&check_in=2023-04-21&s=13&unique_share_id=1C6B345E-5664-4BFC-978B-D44F176DF9F1&_branch_match_id=1143999629027938480&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT0zKS9LLTdV3NXZNSi1McnUrTwIASr96TxsAAAA%3D&source_impression_id=p3_1673988994_LFGiA3pz8ETWP8Ky)

@@ -136,6 +136,71 @@ As a mobile first approach, I have created wireframes using website [www.app.uiz
 | Holidays Page |Page for users to view confirmed holiday's and upcoming, with their comments on events visited. | <img src="assets/images/readme_images/small_holidays_page.png" width="150px">|
 
 ### Data Tables
+
+To Complete all task required of the website and linking Accounts, Bookings, ToDo task, Images and comments/reviews - I have opted to use a relational approach with the following tables/information:
+
+**User**
+| field | Data Type | Key | Required? |
+|---|---|---|---:|
+| _reference | Integer | Primary | Automatic |
+| account_name | String | Foreign Key| Yes |
+| first_name | String | N/A | Yes |
+| last_name | String | N/A | Yes |
+| contact_number |  Integer | N/A | Yes |
+| address_line1 | String | N/A | Yes |
+| address_line2 | String | N/A | Yes |
+| address_line3 | String | N/A | No |
+| address_line4 | String | N/A | No |
+| post_code | String | N/A | Yes |
+| email_address | String | N/A | Yes |
+| pref_of_contact | String | N/A | Yes |
+| admin_comment | String | N/A | No |
+
+**Comment**
+| field | Data Type | Key | Required? |
+|---|---|---|---:|
+| reference | Integer | Primary | Automatic |
+| account_name | String | Foreign Key | Automatic |
+| booking_reference | Integer | Foreign Key | Automatic |
+| overall | String | N/A | No |
+| overall_feeling | Interger | N/A | No |
+| personal | String | N/A | No |
+| personal_feeling | Integer | N/A | No |
+| display | Boolean | N/A | No (Admin Only) | 
+
+**Booking**
+| field | Data Type | Key | Required? |
+|---|---|---|---:|
+| account_name | String | Foreign Key | Automatic |
+| booking_reference | Integer | Primary Key | Automatic |
+| start_date | date | Foreign Key | Yes |
+| end_date | date | Foreign Key | Yes |
+| number_of_guest | Integer | N/A | Automatic |
+| number_of_o18 | Integer | N/A | Yes |
+| number_of_u18 | Integer | N/A | Yes |
+| number_of_pets | Integer | N/A | Yes |
+
+**Task**
+| field | Data Type | Key | Required? |
+|---|---|---|---:|
+| task_ref | Integer | Primary Key | Automatic |
+| user_name | String | Foreign Key | Yes |
+| booking_reference | Integer | Foreign Key | Yes |
+| start_date | date | Foreign Key | No |
+| end_date | date | Foreign Key | No |
+| task_description | String | N/A | Yes |
+| complete | Boolean | N/A | Yes |
+
+**Messages**
+| field | Data Type | Key | Required? |
+|---|---|---|---:|
+| _thread | Integer | Primary Key | Automatic |
+| _from | Integer | Foreign Key | Automatic |
+| _to | Integer | Foreign Key | Yes |   
+| _header | String | N/A | Yes | 
+| _body | String | N/A | Yes |
+| report | Boolean | N/A | Yes | 
+
 ****
 ## Testing
 ### Test Driven Development (TDD)

@@ -35,8 +35,8 @@ class Comment(models.Model):
     comment_reference = models.SlugField(primary_key=True, unique=True)
     user_reference = models.ForeignKey(Account, on_delete=models.CASCADE)
     booking = models.ForeignKey(Booking, on_delete=models.DO_NOTHING)
-    overall_comment = models.CharField(max_length=200)
-    personal_comment = models.CharField(max_length=200)
+    overall_comment = models.CharField(max_length=200, choices=STATUS, default=0)
+    personal_comment = models.CharField(max_length=200, choices=STATUS, default=0)
 
 class Task(models.Model):
     taks_reference = models.IntegerField(primary_key=True)

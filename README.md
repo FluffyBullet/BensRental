@@ -211,6 +211,15 @@ To Complete all task required of the website and linking Accounts, Bookings, ToD
 ### Bugs Fixed
 ****
 ## Dev Log
+
+23/1/23
+
+
+Whilst viewing the data and building my database and profile on Visual Studio code I found the codes followed a scattered path with fields either not covered or with errors. To correct this, I have stripped back the commits and re-worked on the previous repository with details on models.py. 
+
+Also recognising creation of "Accounts" model overlaps user automatically imported by Django Allauth.
+
+
 ### Deployment
 ### Creating a copy
 ### Progression log

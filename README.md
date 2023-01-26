@@ -219,6 +219,10 @@ Whilst viewing the data and building my database and profile on Visual Studio co
 
 Also recognising creation of "Accounts" model overlaps user automatically imported by Django Allauth.
 
+26/1/23
+
+For setting up the website and using a responsive first layout, I have selected CSS Framework "Foundation" with the provided CND Link off their website. This is linked into the base.html file, applying to all pages for the website's page(s).
+
 
 ### Deployment
 ### Creating a copy
@@ -228,6 +232,10 @@ Also recognising creation of "Accounts" model overlaps user automatically import
 ****
 ## References
 ### Languages, Libraries and Frameworks used
+
+For creating the template's of the wesites, I'm using "Foundation" framework. Their website: https://get.foundation/sites/docs/installation.html
+
+
 ### Code Sources
 ### Information/Influence
 #### [DirectHolidayHomes](https://www.directholidayhomes.co.uk/isle-of-wight/whitecliff_bay/9261)

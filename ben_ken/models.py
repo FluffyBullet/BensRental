@@ -20,7 +20,8 @@ class Booking(models.Model):
     booking_reference = models.AutoField(unique=True, primary_key=True)
     week_booking = models.SmallIntegerField()
     year_booking = models.SmallIntegerField()
-    calendar_reference = models.SmallIntegerField(unique=True)
+    if_available = models.BooleanField(default=True)
     number_of_o18 = models.SmallIntegerField(blank=False)
     number_of_u18 = models.SmallIntegerField(blank=False)
     number_of_pets = models.SmallIntegerField(blank=False)
+ 

@@ -1,5 +1,48 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<h1>Hey there :)!</h1>
+
+<div class="hero_image">
+    <img src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" aria-label="Front of caravan for hire" id="hero_image">
+</div>
+<div class="hero_text">
+    <h1> Whitecliff Bay</h1>
+    <p> Based in Hillway, Isle of Wight, this caravan offers a picturesque view and a hop away from the local beach. 
+        Offering 2 bedrooms and sleeping up to 6 people, also allowing pets for the complete family holiday.<br>
+    </p>
+</div>
+<hr>
+<div class="owner">
+    <h2>Owner Details</h2>
+    <p>
+        Ben Kennedy will be your contact for queries regarding the caravan, your stay and other questions. Your details are required for creating a profile on this website,
+        allowing Ben to make contact with yourself, but if you wish to do beforehand, Ben is contactable by e-mail on <a href="mailto:ben@kennedy.com"
+         aria-label="click here to create e-mail to the owner">ben@kennedy.com</a>
+    </p>
+</div>
+<hr>
+<div class="location">
+    <div class="location_details">
+        <h2>Getting There</h2>
+        <p>The caravan is situated on the east coast of Isle Of Wight, UK. Travelling from mainland of England, ferry companies 
+            <a href="https://www.wightlink.co.uk/?gclid=CjwKCAiA5sieBhBnEiwAR9oh2il5fw_JQCZgaUpmhWniJlrMEGepOsVMJMqHCgdXkTvXW02AlpfV4RoCf9MQAvD_BwE"
+            aria-label="website link for wightlink" target="_blank">
+                Wight Link, isle of wight ferries
+            </a> and
+            <a href="https://www.redfunnel.co.uk/en/" aria-label="website link for red funnel" target="_blank">
+                Red Funnel
+            </a>
+            are the main means of transport.
+        </p>
+    </div>
+    </div>
+    <div id="location_map">
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="360" height="237" id="gmap_canvas" 
+            src="https://maps.google.com/maps?q=Whitecliff%20Bay%20Holiday%20Park&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.online-timer.net"></a><br><style>
+            .mapouter{position:relative;text-align:right;height:237px;width:360px;}</style><a href="https://www.embedgooglemap.net"></a>
+            <style>.gmap_canvas {overflow:hidden;background:none!important;height:237px;width:360px;}</style></div></div>
+    </div>
+</div>
+
 {%endblock%}

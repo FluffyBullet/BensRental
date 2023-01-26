@@ -6,27 +6,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
     <title>Caravan Rental | Ben Kennedy</title>
-    <link rel="stylesheet" href="../templates/base.html" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
 </head>
 <body>
     <nav>
-        <ul class="menu icons icon-top">
+        <ul class="top-bar-left icons menu align-center icon-top small-6">
             <li><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
             <li><a href="#"><i class="fa-solid fa-circle-info"></i>Details</a></li>
             <li><a href="#"><i class="fa-solid fa-calendar-check"></i>Availability</a></li>
             <li><a href="#"><i class="fa-solid fa-calendar-plus"></i>Booking</a></li>
-            <li><a href="#"><i class="fa-solid fa-user"></i>User Account</a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i>Account</a></li>
         </ul>
     </nav>
 
     {% block content %}
     {%endblock%}
+    
+    <footer>
+        <div class="other_sites">
+            <h4>Also hosted on:</h4>
+            <a href="https://www.airbnb.co.uk/rooms/724593970566123396?check_out=2023-04-23&children=1&adults=2&check_in=2023-04-21&s=13&unique_share_id=1C6B345E-5664-4BFC-978B-D44F176DF9F1&_branch_match_id=1143999629027938480&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT0zKS9LLTdV3NXZNSi1McnUrTwIASr96TxsAAAA%3D&source_impression_id=p3_1673988994_LFGiA3pz8ETWP8Ky&modal=PHOTO_TOUR_SCROLLABLE"
+            target ="_blank"> airbnb</a><br>
+            <a href="https://www.directholidayhomes.co.uk/isle-of-wight/whitecliff_bay/9261" target="_blank"> DirectHolidayHomes</a>
+        </div>
+    </footer>
 </body>
-
-<!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
-
 <!-- Compressed JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 

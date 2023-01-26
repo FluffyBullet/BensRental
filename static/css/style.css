@@ -1,3 +1,69 @@
-body{
-    color:blue;
+/** 
+For base template layout, nav & footer
+**/
+body {
+    margin:0;
+    padding:0;
+}
+nav {
+    background-color:rgb(48, 48, 252);
+}
+ul li {
+    width:18%;
+    margin:0 auto;
+}
+
+ul li a {
+    color:whitesmoke;
+}
+
+footer {
+    background-color:rgb(48, 48, 252);
+    color:white;
+    position:relative;
+    margin-top:auto;
+    height:10rem;
+    width:100vw; 
+    padding-top:10px;
+}
+
+footer div {
+    margin-left:5vw;
+    display:inline-block;
+}
+
+footer a{
+    text-decoration-line:underline;
+    color:white;
+    font-size:12px;
+}
+
+/**
+General css styles
+**/
+
+hr {
+    width:60%;
+    color: rgba(37, 36, 36, 0.863);
+}
+
+/** 
+Index /home page
+**/
+
+.hero_text, .location_details, .owner {
+    text-align:left;
+    padding: 15px 10px;
+    font-size:.9rem;
+    
+}
+
+.hero_text h1, .location_details h2, .owner h2{
+    text-decoration:underline;
+    font-weight:600;
+    text-align:center;
+}
+#location_map {
+    display:flex;
+    justify-content: center;
 }

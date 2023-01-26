@@ -223,14 +223,20 @@ Also recognising creation of "Accounts" model overlaps user automatically import
 
 For setting up the website and using a responsive first layout, I have selected CSS Framework "Foundation" with the provided CND Link off their website. This is linked into the base.html file, applying to all pages for the website's page(s).
 
+Setting up the home page, I connected to the booking table with a querset, but had no interaction with the database. After searches across mutliple sites and conversations, 
+
 
 ### Deployment
 ### Creating a copy
 ### Progression log
 ****
 ## Acknowledgements
+
+Jason Reynolds - Trouble shooting conversations to approach bugs and errors
+
 ****
 ## References
+
 ### Languages, Libraries and Frameworks used
 
 For creating the template's of the wesites, I'm using "Foundation" framework. Their website: https://get.foundation/sites/docs/installation.html
@@ -239,6 +245,11 @@ For creating the template's of the wesites, I'm using "Foundation" framework. Th
 ### Code Sources
 
 Embedding of google maps - https://www.embedgooglemap.net/
+
+W3 Schools - 
+
+setting up home url without link to views or database functions
+- https://www.w3schools.com/django/django_add_main.php
 
 
 ****

@@ -48,7 +48,7 @@ hr {
 }
 
 /** 
-Index /home page
+Index/home page
 **/
 
 .hero_text, .location_details, .owner {
@@ -67,3 +67,7 @@ Index /home page
     display:flex;
     justify-content: center;
 }
+
+/**
+end of Index/home Page 
+**/

@@ -47,6 +47,12 @@ hr {
     color: rgba(37, 36, 36, 0.863);
 }
 
+.header {
+    text-decoration:underline;
+    font-weight:600;
+    text-align:center;
+}
+
 /** 
 Index/home page
 **/
@@ -58,11 +64,6 @@ Index/home page
     
 }
 
-.hero_text h1, .location_details h2, .owner h2{
-    text-decoration:underline;
-    font-weight:600;
-    text-align:center;
-}
 #location_map {
     display:flex;
     justify-content: center;
@@ -71,3 +72,30 @@ Index/home page
 /**
 end of Index/home Page 
 **/
+
+/**
+Start of details page 
+**/
+
+.picture{
+    padding:0;
+    margin:0;
+    display:block;
+    max-width:48%;
+}
+.picture img{
+    object-fit:fill;
+}
+#images {
+    display:flex;
+    flex-flow:row wrap;
+}
+.seating img{
+    width:140px;
+    display:inline-block;
+}
+
+.callout {
+    width:80%;
+    margin:15px;
+}

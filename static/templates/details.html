@@ -5,70 +5,80 @@
 <div id="caravan_details">
     <h2 class="header"> Caravan Images</h2>
     <div id="images">
+        <div class="grid-x grid-padding-x align-middle" id="left">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
         <div class="picture small">
             <img src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan"/>
         </div>
-        <!-- <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/external_balcany_top.png' %}" alt="Image ontop of the decking"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one.png' %}" alt="Main Bedroom picture 2"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two_side.png' %}" alt="Twin Bedroom picture 1"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one_side.png' %}" alt="Main Bedroom picture 1"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two.png' %}" alt="Twin Bedroom picture 2"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_hallway.png' %}" alt="Hallway"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one_side.png' %}" alt="Bathroom"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_kitchen.png' %}" alt="Kitchen"/>
         </div>
-        <div class="picture small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_dining.png' %}" alt="Dining Room"/>
         </div>
-        <div class="picture seating small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_lobby_2.png' %}" alt="Internal lounge picture 1"/>
         </div>
-        <div class="picture seating small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_lobby.png' %}" alt="Internal lounce picture 2"/>
         </div>
-        <div class="picture seating small">
+        <div class="picture small hide">
             <img src="{% static 'assets/images/kennedy_caravan/internal_seating.png' %}" alt="Seating available inside the caravan."/>
-        </div>-->
+        </div>
+        <div class="grid-x grid-padding-x align-middle " id="right">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
     </div> 
 <hr>
     <div class="renters_comments">
         <h4 class="header">Customers Reviews</h4>
         <!-- Comments from visitors to be inserted below, to be added -->
         {% for comment in comment_overall %}
-            {% if loop.counter|divisibleby:2 %}
-                <div class="callout primary">
-                    <p>{{ comment.overall_comment }}</p>
-                    <!-- <h4>{{ comment.user }} and Week {{ Booking.week_booking }} of Year {{ Booking.year_booking }}</h4> -->
-                </div>
-                {% else %}
-                <div class="align-right grid-x">
-                    <div class="callout success grid-x align-right">
-                        <p>{{ comment.overall_comment }}</p>
-                        <!-- <h4></h4> -->
-                    </div>
-                </div>
-            {% endif %}
+        {% if loop.counter|divisibleby:2 %}
+        <div class="callout primary">
+            <p>{{ comment.overall_comment }}</p>
+            <!-- <h4>{{ comment.user }} and Week {{ Booking.week_booking }} of Year {{ Booking.year_booking }}</h4> -->
+        </div>
+        {% else %}
+        <div class="align-right grid-x">
+            <div class="callout success grid-x align-right">
+                <p>{{ comment.overall_comment }}</p>
+                <!-- <h4></h4> -->
+            </div>
+        </div>
+        {% endif %}
+        {% empty %}
+        <div class="callout grid-x grid-padding-x align-center-middle text-center">
+            <p class="grid-x grid-padding-x align-center-middle text-center">No-one has left a comment yet  <i class="fa-regular fa-face-frown"></i> please let others know how your stay was!</p>
+        </div>
         {% endfor%}
     </div>
 </div>

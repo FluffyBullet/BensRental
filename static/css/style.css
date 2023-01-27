@@ -77,22 +77,20 @@ end of Index/home Page
 Start of details page 
 **/
 
-.picture{
-    padding:0;
-    margin:0;
-    display:block;
-    max-width:48%;
+.picture {
+    width:50%;
+    display:inline-block;
 }
-.picture img{
-    object-fit:fill;
-}
+
 #images {
     display:flex;
-    flex-flow:row wrap;
+    justify-content: center;
 }
-.seating img{
-    width:140px;
-    display:inline-block;
+
+#left, #right {
+    font-size:26px;
+    margin:0 25px;
+    color:rgb(48, 48, 252);
 }
 
 .callout {

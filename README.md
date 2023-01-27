@@ -243,7 +243,16 @@ Jason Reynolds - Trouble shooting conversations to approach bugs and errors
 
 ### Languages, Libraries and Frameworks used
 
-For creating the template's of the wesites, I'm using "Foundation" framework. Their website: https://get.foundation/sites/docs/installation.html
+With use of the database interactivity and passing information between back end and front end, my fourth project will be using Python's 'Django' framework, accompanied with frameworks such as:
+1. Psycopg2
+1. Gunicorn
+1. dj_database_url
+
+For creating the template's of the wesites, I'm using "Foundation" framework. Their website: https://get.foundation/sites/docs/installation.html, also adding my own requirements of CSS which can be found in the static folder and CSS File.
+
+My Templates will be created by the use of HTML5
+
+I will also require formatting of injected HTML, to acheive this I will be using JavaScript and jQuery.
 
 
 ### Code Sources

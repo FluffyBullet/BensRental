@@ -21,7 +21,7 @@ class customer_feedback(generic.ListView):
 class Calendar_view(generic.ListView):
     model = Booking
     queryset = Booking.objects.order_by('-booking_reference')
-    template_name = 'details.html'
+    template_name = 'availability.html'
     paginate_by=8
     weeks = Booking.week_booking
     year = Booking.year_booking

@@ -247,6 +247,8 @@ index.html included queries advising:
     * On creation this was first entered with aria-label, but is now corrected
 1. iframe has issues with scrolling, frameborder, marginheight, marginwidth and style
     * This code is imported from a webiste which is tested and provided the information required.
+
+details.html was also tested, displaying similar results. However, the W3 Validator has corrected my inclusion of closing tag in the image. These are now removed.
 ****
 ## Acknowledgements
 

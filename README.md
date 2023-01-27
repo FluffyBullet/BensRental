@@ -208,6 +208,10 @@ To Complete all task required of the website and linking Accounts, Bookings, ToD
 ****
 ## Bugs
 ### Bugs to be Fixed
+
+details.html page started with a library of photo's to be displayed, but with sizing and formatting - I chose to use similar to my previous project in JavaScript. Having an active tile and looping through whilst changing their style tags.
+
+However, creating this - console is advising $.fn.foundation is not selectable - issue with the CSS Framework and I believe attempting to use jQuery. This is to be reviewed at a later date.
 ### Bugs Fixed
 ****
 ## Dev Log

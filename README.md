@@ -233,6 +233,20 @@ Setting up the home page, I connected to the booking table with a queryset, but 
 ### Deployment
 ### Creating a copy
 ### Progression log
+
+After creating two templates and base template, I used w3 validators for HTML and CSS written on this project.
+
+index.html included queries advising:
+1. consider using lang tag in html
+    *  as this is imported form base.html with django, this comment is not valid
+1. include head tag
+    * as this is imported form base.html with django, this comment is not valid
+1. bad value - src tag seen with use of {, advising as a illegal character in path segment
+    * as this is imported form base.html with django, this comment is not valid
+1. img tag with no alt attribute
+    * On creation this was first entered with aria-label, but is now corrected
+1. iframe has issues with scrolling, frameborder, marginheight, marginwidth and style
+    * This code is imported from a webiste which is tested and provided the information required.
 ****
 ## Acknowledgements
 

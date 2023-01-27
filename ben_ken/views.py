@@ -9,7 +9,7 @@ def main(request):
     return HttpResponse(template.render())
 
 
-class customer_feedback(generic.ListView):
+class Customer_feedback(generic.ListView):
     model= Comment
     queryset = Comment.objects.order_by('-comment_id')
     paginate_by = 4

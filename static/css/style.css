@@ -97,3 +97,16 @@ Start of details page
     margin:15px;
     font-size:14px;
 }
+
+/** 
+End of details page
+**/
+/**
+Start of Availability Checker
+**/
+
+.avail_check {
+    width:90%;
+    border-radius:16px;
+    background-color:rgba(173, 216, 230, 0.568)
+}

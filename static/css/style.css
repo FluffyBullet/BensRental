@@ -79,7 +79,7 @@ Start of details page
 
 .picture {
     width:50%;
-    display:inline-block;
+    /* display:none; */
 }
 
 #images {
@@ -96,4 +96,5 @@ Start of details page
 .callout {
     width:80%;
     margin:15px;
+    font-size:14px;
 }

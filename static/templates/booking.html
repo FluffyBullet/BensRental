@@ -3,6 +3,45 @@
 
 {% block content %}
 
+<form action="">
 
+    <div class="input-group">
+        <label for="email_address" class="input-group-label">E-mail address</label>
+        <input type="text" id="email" name="email_address" value="{{ email }}" class="input-group-field">
+    </div>
+
+    <div class="input-group">
+        <label for="week_selection" class="input-group-label"> Week Selected</label>
+        <input type="week" id="week_selection" name="week_selection" class="input-group-field">
+    </div>
+
+    <div class="input-group">
+        <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>
+        <input type="number" name="adults" id="adults" class="input-group-field">
+    </div>
+
+    <div class="input-group">
+        <label for="u18" id="u18" name="under_18" class="input-group-label">Under 18:</label>
+        <input type="number" name="adults" id="under_18" class="input-group-field">
+    </div>
+    <div class="input-group">
+        <label for="pets" id="pets" name="pets" class="input-group-label">Pets:</label>
+        <input type="pets" name="pets" id="pets" class="input-group-field">
+    </div>
+
+    <div class="input-group">
+        <label for="contact_number" id="contact_number" name="contact_number" class="input-group-label">Contact Number:</label>
+        <input type="tel" name="contact_number" id="contact_number" pattern="[0-9]{9}"value="{{ contact_number }}" class="input-group-field">
+    </div>
+
+    <h3>Messages for the provider</h3>
+    <br>
+    <textarea name="message" rows="4" cols="20">
+    </textarea>
+
+    <input type="sumbit" name="submit" id="submit" value="Submit Request">
+    
+
+</form>
 
 {% endblock %}

@@ -32,5 +32,10 @@ class Booking_form(generic.ListView):
     queryset = Booking.objects.order_by('-week_booking','-year_booking')
     template_name = 'booking.html'
     weeks = Booking.week_booking
-    year = Booking.week_booking
+    year = Booking.year_booking
+
+    def get(self,request,*args,**kwargs):
+        queryset = Booking.objects
+
+
     

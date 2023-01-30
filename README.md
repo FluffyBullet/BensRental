@@ -280,6 +280,11 @@ W3 Schools -
 setting up home url without link to views or database functions
 - https://www.w3schools.com/django/django_add_main.php
 
+django documentation -
+
+- https://docs.djangoproject.com/
+for information on views, url paths and model help.
+
 
 ****
 ### Information/Influence

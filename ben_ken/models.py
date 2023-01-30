@@ -26,6 +26,9 @@ class Booking(models.Model):
     number_of_o18 = models.SmallIntegerField(blank=False)
     number_of_u18 = models.SmallIntegerField(blank=False)
     number_of_pets = models.SmallIntegerField(blank=False)
+
+    def __int__(self):
+        return self.booking_reference
  
 
 class Comment(models.Model):

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
 from django.template import loader
-from .models import Booking, Comment
+from .models import Booking, Comment, User
 
 def main(request):
     template = loader.get_template('index.html')
@@ -27,4 +27,10 @@ class Calendar_view(generic.ListView):
     year = Booking.year_booking
     available = Booking.if_available
 
-
+class Booking_form(generic.ListView):
+    model = Booking
+    queryset = Booking.objects.order_by('-week_booking','-year_booking')
+    template_name = 'booking.html'
+    weeks = Booking.week_booking
+    year = Booking.week_booking
+    

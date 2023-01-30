@@ -14,7 +14,7 @@ class Profile(models.Model):
     postcode = models.CharField(max_length=7)
       
     def __str__(self):
-        return self.user
+        return self.user.first_name
 
 
 class Booking(models.Model):
@@ -29,10 +29,14 @@ class Booking(models.Model):
 
     def __int__(self):
         return self.booking_reference
+
+    def __str__(self):
+        return "Stay " + str(self.booking_reference)
  
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True, unique=True)
+    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.DO_NOTHING)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     overall_comment = models.CharField(max_length=250)
     personal_comment = models.CharField(max_length=250)
@@ -47,3 +51,6 @@ class Comment(models.Model):
         (unhappy, "Unhappy"),
         )
     )
+
+    def __int__(self):
+        return self.comment_id

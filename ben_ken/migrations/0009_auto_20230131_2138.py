@@ -34,10 +34,4 @@ class Migration(migrations.Migration):
             field=models.CharField(choices=[('phone', 'Phone'), ('post', 'Post'), ('post', 'letter')], default=1, max_length=6),
             preserve_default=False,
         ),
-        migrations.AddField(
-            model_name='profile',
-            name='profile_reference',
-            field=models.AutoField(auto_created=True, default=1, primary_key=True, serialize=False, unique=True),
-            preserve_default=False,
-        ),
     ]

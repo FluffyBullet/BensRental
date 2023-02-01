@@ -9,7 +9,7 @@ STATUS = ((0,"Display"),(1,"Hide"))
 
 class Profile(models.Model):
     profile_reference = models.IntegerField(auto_created=True, primary_key=True, unique=True)
-    user = models.ForeignKey(User, to_field="username", on_delete=models.DO_NOTHING)
+    user_id = models.ForeignKey(User, to_field="username", on_delete=models.DO_NOTHING)
     contact_number = models.CharField(max_length=11, blank=False)
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50)

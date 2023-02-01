@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ben_ken.urls'), name='availability-view'),
+    path('accounts/', include('allauth.urls')),
 ]

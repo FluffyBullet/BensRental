@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
 from django.template import loader
-from .models import Booking, Comment, User
+from .models import Booking, Comment, Profile
 
 def main(request):
     template = loader.get_template('index.html')
@@ -15,7 +15,7 @@ class Customer_feedback(generic.ListView):
     paginate_by = 4
     overall_comment = Comment.overall_comment
     overall_feeling = Comment.overall_feeling
-    user = Comment.user
+    user = Comment.profile
     template_name = 'details.html'
 
 class Calendar_view(generic.ListView):
@@ -33,9 +33,6 @@ class Booking_form(generic.ListView):
     template_name = 'booking.html'
     weeks = Booking.week_booking
     year = Booking.year_booking
-
-    def get(self,request,*args,**kwargs):
-        queryset = Booking.objects
 
 
     

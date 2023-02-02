@@ -27,7 +27,7 @@ class Profile(models.Model):
     admin_commnets = models.CharField(max_length=250, blank=True)
       
     def __str__(self):
-        return self.user
+        return self.user_id.username
 
 
 class Booking(models.Model):
@@ -39,9 +39,6 @@ class Booking(models.Model):
     number_of_o18 = models.SmallIntegerField(blank=False)
     number_of_u18 = models.SmallIntegerField(blank=False)
     number_of_pets = models.SmallIntegerField(blank=False)
-
-    def __int__(self):
-        return self.booking_reference
 
     def __str__(self):
         return "Stay " + str(self.booking_reference)

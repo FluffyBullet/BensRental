@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
 from django.template import loader
-from .models import Booking, Comment, Profile
+from .models import *
 
 def main(request):
     template = loader.get_template('index.html')
@@ -34,5 +34,15 @@ class Booking_form(generic.ListView):
     weeks = Booking.week_booking
     year = Booking.year_booking
 
+
+def weeks_view(request):
+    weeks_view = Booking.objects.get('week_booking')
+    year_view = Booking.objects.get('year_booking')
+    template = loader.get_template('avaialbility.html')
+    context = {
+        'weeks_view': weeks_view,
+        'years_view': year_view,
+    }
+    return HttpResponse(template.render(context, request))
 
     

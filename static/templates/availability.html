@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
-<div class="callout avail_check">
+
+{% for w in weeks_view %}
+
+    <div class="callout avail_check">
+        <h3 class="header">{{ w.weeks_view }}</h3>    
+        <p class="availability">{{ w.if_available }}</p>
+    </div>
+
+{% endfor %}
+<!-- <div class="callout avail_check">
     <div class="h3 header">Week Heading</div>
     <p>week details</p>
     <p class="availability">Available</p>
@@ -26,7 +35,7 @@
     <div class="h3 header">Week Heading</div>
     <p>week details</p>
     <p class="availability">Available</p>
-</div>
+</div> -->
 <div class="pagination grid-x grid-padding-x align-center-middle text-center">
     <span class="step-links">
         {% if page_obj.has_previous %}

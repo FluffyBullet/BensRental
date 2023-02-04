@@ -127,14 +127,17 @@
     <div class="renters_comments">
         <h4 class="header">Customers Reviews</h4>
         <!-- Comments from visitors to be inserted below, to be added -->
-        {% for comments in comment %}
+        {% for comments in comment_list %}
         <div class="callout grid-x grid-padding-x align-center-middle text-center">
-          {{ comments.overall_comment }}
+          <p>{{ comments.overall_comment }}<br></p>
+          <hr>
+          <p>by {{comments.profile}}</p>
         </div>
         
         {% empty %}
         <div class="callout grid-x grid-padding-x align-center-middle text-center">
-            <p class="grid-x grid-padding-x align-center-middle text-center">No-one has left a comment yet    <i class="fa-regular fa-face-frown"></i> please let others know how your stay was!</p>
+            <p class="grid-x grid-padding-x align-center-middle text-center">No-one has left a comment yet <i class="fa-regular fa-face-frown"></i> 
+              please let others know how your stay was!</p>
         </div>
         {% endfor%}
     </div>

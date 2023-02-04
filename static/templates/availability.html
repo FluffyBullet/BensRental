@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 
-{% for w in weeks_view %}
 
-    <div class="callout avail_check">
-        <h3 class="header">{{ w.weeks_view }}</h3>    
-        <p class="availability">{{ w.if_available }}</p>
-    </div>
+<p>testing</p>
 
-{% endfor %}
+<div>
+    {% for week in booking_list %}
+        <div class="avail_check">
+            <h2>Week {{ week.week_booking }}</h2>
+            <h3>of year {{ week.year_booking }}</h3>
+            <h3>{{ week.if_available }}</h3>
+        </div>
+    {% endfor %}
+</div>
 <!-- <div class="callout avail_check">
     <div class="h3 header">Week Heading</div>
     <p>week details</p>

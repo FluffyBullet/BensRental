@@ -24,7 +24,7 @@ class Profile(models.Model):
         (post, "Post"),
         (post, "letter"),
     ))
-    admin_commnets = models.CharField(max_length=250, blank=True)
+    admin_comments = models.CharField(max_length=250, blank=True)
       
     def __str__(self):
         return self.user_id.username
@@ -39,9 +39,10 @@ class Booking(models.Model):
     number_of_o18 = models.SmallIntegerField(blank=False)
     number_of_u18 = models.SmallIntegerField(blank=False)
     number_of_pets = models.SmallIntegerField(blank=False)
+    date_ref = str(week_booking)+str(year_booking)
 
     def __str__(self):
-        return "Stay " + str(self.booking_reference)
+        return "Booking reference: " + str(self.booking_reference)
  
 
 class Comment(models.Model):
@@ -66,4 +67,4 @@ class Comment(models.Model):
         return self.comment_id
 
     def __str__(self):
-        return "comment" + {comment_id} + "by" + {profile} 
+        return "comment" + str(self.comment_id) + "by" + str(self.profile) 

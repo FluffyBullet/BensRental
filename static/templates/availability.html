@@ -2,16 +2,22 @@
 
 {% block content %}
 
-
-<p>testing</p>
-
 <div>
     {% for week in booking_list %}
-        <div class="avail_check">
+
+        {% if week.if_available == True %}
+            <div class="avail_check callout success">
+                <h2>Week {{ week.week_booking }}</h2>
+                <h3>of year {{ week.year_booking }}</h3>
+                <h3>{{ week.if_available }}</h3>
+            </div>
+        {% elif week.if_available == False %}
+        <div class="avail_check callout alert">
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
             <h3>{{ week.if_available }}</h3>
         </div>
+        {% endif %}
     {% endfor %}
 </div>
 <!-- <div class="callout avail_check">

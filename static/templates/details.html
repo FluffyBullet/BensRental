@@ -127,9 +127,9 @@
     <div class="renters_comments">
         <h4 class="header">Customers Reviews</h4>
         <!-- Comments from visitors to be inserted below, to be added -->
-        {% for comment in Customer_feedback_list %}
+        {% for comments in comment %}
         <div class="callout grid-x grid-padding-x align-center-middle text-center">
-          {{ comment.overall_comment }}
+          {{ comments.overall_comment }}
         </div>
         
         {% empty %}

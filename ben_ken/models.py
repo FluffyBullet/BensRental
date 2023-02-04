@@ -40,6 +40,7 @@ class Booking(models.Model):
     number_of_u18 = models.SmallIntegerField(blank=False)
     number_of_pets = models.SmallIntegerField(blank=False)
     date_ref = str(week_booking)+str(year_booking)
+    charge = models.PositiveSmallIntegerField(null=True)
 
     def __str__(self):
         return "Booking reference: " + str(self.booking_reference)

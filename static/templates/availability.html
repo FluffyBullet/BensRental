@@ -9,13 +9,13 @@
             <div class="avail_check callout success">
                 <h2>Week {{ week.week_booking }}</h2>
                 <h3>of year {{ week.year_booking }}</h3>
-                <h3>{{ week.if_available }}</h3>
+                <p>Charge for this week is £{{ week.charge }}</p>
             </div>
         {% elif week.if_available == False %}
         <div class="avail_check callout alert">
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
-            <h3>{{ week.if_available }}</h3>
+            <p>Sorry, this week is not available.</p>
         </div>
         {% endif %}
     {% endfor %}

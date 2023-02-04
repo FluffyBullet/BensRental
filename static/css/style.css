@@ -109,3 +109,21 @@ Start of Availability Checker
     width:90%;
     border-radius:16px;
 }
+
+/** Booking page **/
+
+.booking_form { 
+    width:80%;
+    margin: 0 auto;
+}
+
+.attendance { 
+    width:30%;
+    display:inline-block;
+}
+
+form #submit {
+    background-color:rgb(48, 48, 252);
+    color:whitesmoke;
+    width: 45%;
+}

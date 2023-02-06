@@ -6,122 +6,57 @@
 <div id="caravan_details">
     <h2 class="header"> Caravan Images</h2>
     <div id="images">
-
-        <!-- Taken from foundation website, orbit image-->
-        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-            <div class="orbit-wrapper">
-              <div class="orbit-controls">
-                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-              </div>
-              <ul class="orbit-container">
-                <li class="is-active orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan">
-                    <figcaption class="orbit-caption">Taken from the front of the Caravan</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom">
-                    <figcaption class="orbit-caption">Bathroom display</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany">
-                    <figcaption class="orbit-caption">Outside view of the caravan</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-                    <figcaption class="orbit-caption">Outta This World</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-                    <figcaption class="orbit-caption">Outta This World</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-                    <figcaption class="orbit-caption">Outta This World</figcaption>
-                  </figure>
-                </li>
-                <li class="orbit-slide">
-                  <figure class="orbit-figure">
-                    <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-                    <figcaption class="orbit-caption">Outta This World</figcaption>
-                  </figure>
-                </li>
-              </ul>
-            </div>
-            <nav class="orbit-bullets">
-              <button class="is-active" data-slide="0">
-                <span class="show-for-sr">First slide details.</span>
-                <span class="show-for-sr" data-slide-active-label>Current Slide</span>
-              </button>
-              <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-              <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-              <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-            </nav>
-          </div>
-          <!-- End of Foundation html-->
-
-        <div class="grid-x grid-padding-x align-middle" id="left">
-            <i class="fa-solid fa-arrow-left"></i>
-        </div>
-        <div class="picture small">
-            <img src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/external_balcany_top.png' %}" alt="Image ontop of the decking">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one.png' %}" alt="Main Bedroom picture 2">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two_side.png' %}" alt="Twin Bedroom picture 1">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one_side.png' %}" alt="Main Bedroom picture 1">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two.png' %}" alt="Twin Bedroom picture 2">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_hallway.png' %}" alt="Hallway">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one_side.png' %}" alt="Bathroom">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_kitchen.png' %}" alt="Kitchen">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_dining.png' %}" alt="Dining Room">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_lobby_2.png' %}" alt="Internal lounge picture 1">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_lobby.png' %}" alt="Internal lounce picture 2">
-        </div>
-        <div class="picture small hide">
-            <img src="{% static 'assets/images/kennedy_caravan/internal_seating.png' %}" alt="Seating available inside the caravan.">
-        </div>
-        <div class="grid-x grid-padding-x align-middle " id="right">
-            <i class="fa-solid fa-arrow-right"></i>
-        </div>
+      <div class="grid-x grid-padding-x align-middle" id="left">
+          <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      <div class="picture small">
+          <img src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/external_balcany_top.png' %}" alt="Image ontop of the decking">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one.png' %}" alt="Main Bedroom picture 2">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two_side.png' %}" alt="Twin Bedroom picture 1">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one_side.png' %}" alt="Main Bedroom picture 1">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two.png' %}" alt="Twin Bedroom picture 2">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_hallway.png' %}" alt="Hallway">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one_side.png' %}" alt="Bathroom">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_kitchen.png' %}" alt="Kitchen">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_dining.png' %}" alt="Dining Room">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_lobby_2.png' %}" alt="Internal lounge picture 1">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_lobby.png' %}" alt="Internal lounce picture 2">
+      </div>
+      <div class="picture small hide">
+          <img src="{% static 'assets/images/kennedy_caravan/internal_seating.png' %}" alt="Seating available inside the caravan.">
+      </div>
+      <div class="grid-x grid-padding-x align-middle " id="right">
+          <i class="fa-solid fa-arrow-right"></i>
+      </div>
     </div> 
 <hr>
     <div class="renters_comments">

@@ -207,12 +207,22 @@ To Complete all task required of the website and linking Accounts, Bookings, ToD
 ### Behaviour Driven Development (BDD)
 ****
 ## Bugs
+
 ### Bugs to be Fixed
 
 details.html page started with a library of photo's to be displayed, but with sizing and formatting - I chose to use similar to my previous project in JavaScript. Having an active tile and looping through whilst changing their style tags.
 
 However, creating this - console is advising $.fn.foundation is not selectable - issue with the CSS Framework and I believe attempting to use jQuery. This is to be reviewed at a later date.
 ### Bugs Fixed
+
+Bug found when viewing website on herokuapp link, but showing no styling and images. This was caused by "MIME" type not recognising text/css as a type and following the walkthrough for my example - the website was looking for the requested images on cloudinary static instead of root directory.
+Following a mention on stack overflow, I found a setting to import to setting.py
+
+```
+import mimetypes
+mimetypes.add_type("text/css",".css",True)
+```
+
 ****
 ## Dev Log
 
@@ -256,6 +266,8 @@ Jason Reynolds - Trouble shooting conversations to approach bugs and errors
 
 ****
 ## References
+
+Fix found from Stack Overflow for MIME issue - https://stackoverflow.com/questions/22839278/python-built-in-server-not-loading-css
 
 ### Languages, Libraries and Frameworks used
 

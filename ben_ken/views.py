@@ -20,6 +20,7 @@ class Availability(generic.ListView):
     template_name = 'availability.html'
     paginate_by = 8
 
+
 class Make_booking(generic.ListView):
     model = Booking
     template_name = 'booking.html'

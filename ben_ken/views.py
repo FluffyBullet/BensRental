@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
+from .forms import BookingForm
 
 def main(request):
     template = loader.get_template('index.html')
@@ -24,5 +25,13 @@ class Availability(generic.ListView):
 class Make_booking(generic.ListView):
     model = Booking
     template_name = 'booking.html'
+
+    def post(request):
+        if request.POST:
+            form = BookingForm(request.POST)
+            if form.is_valid():
+                form.save()
+            return render(Availability)
+        return HttpResponse('availability.html')
     
 

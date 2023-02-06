@@ -2,11 +2,13 @@
 
 {% block content %}
 
-<form action="" method="post">
+{% if user.is_authenticated %}
+<form action="{% url 'make_booking' %}" method="POST" enctype="multipart/form-data" >
+    {% csrf_token%}
     <div class="booking_form">
         <div class="input-group">
             <label for="email_address" class="input-group-label">E-mail address</label>
-            <input type="text" id="email" name="email_address" value="{{ email }}" class="input-group-field">
+            <input type="text" id="email" name="email_address" value="{{ user.email }}" class="input-group-field">
         </div>
 
         <div class="input-group">
@@ -16,7 +18,7 @@
 
         <div class="input-group attendance">
             <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>
-            <input type="number" name="adults" id="adults" class="input-group-field">
+            <input type="number" name="adults" id="adults" class="input-group-field" placeholder="1">
         </div>
 
         <div class="input-group attendance">
@@ -30,7 +32,7 @@
 
         <div class="input-group">
             <label for="contact_number" id="contact_number" name="contact_number" class="input-group-label">Contact Number:</label>
-            <input type="tel" name="contact_number" id="contact_number" pattern="[0-9]{9}"value="{{ contact_number }}" class="input-group-field">
+            <input type="tel" name="contact_number" id="contact_number" pattern="[0-9]{11}"value="{{ profile.contact_number }}" class="input-group-field">
         </div>
 
         <h3>Message for the host:</h3>
@@ -38,9 +40,16 @@
         <textarea name="message" rows="4" cols="20">
         </textarea>
 
-        <input type="sumbit" name="submit" id="submit" value="Submit Request">
+        <input type="submit" name="submit" id="submit" value="Submit Request">
     </div>  
 
 </form>
+{% else %}
+<div>
+    <h3>Please log in</h3>
+    <p> To leave make a booking, please <a href="{% url 'account_login' %}" aria-label="link to login page">log in</p></a>
+    <p>If you do no have an account, you can <a href="{% url 'account_signup' %}" aria-label="sign up for an account">Sign up here</a></p>
+</div>
+{% endif %}
 
 {% endblock %}

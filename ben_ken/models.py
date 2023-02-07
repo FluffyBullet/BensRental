@@ -31,15 +31,14 @@ class Profile(models.Model):
 
 
 class Booking(models.Model):
-    booking_reference = models.AutoField(unique=True, primary_key=True)
-    booker = models.ForeignKey(Profile, to_field="profile_reference", on_delete=models.DO_NOTHING)
+    booking_reference = models.IntegerField(unique=True, primary_key=True, null=False)
+    booker = models.ForeignKey(Profile, to_field="profile_reference", on_delete=models.DO_NOTHING,null=True)
     week_booking = models.SmallIntegerField()
     year_booking = models.SmallIntegerField()
     if_available = models.BooleanField(default=True)
-    number_of_o18 = models.SmallIntegerField(blank=False)
-    number_of_u18 = models.SmallIntegerField(blank=False)
-    number_of_pets = models.SmallIntegerField(blank=False)
-    date_ref = str(week_booking)+str(year_booking)
+    number_of_o18 = models.SmallIntegerField(blank=True)
+    number_of_u18 = models.SmallIntegerField(blank=True)
+    number_of_pets = models.SmallIntegerField(blank=True)
     charge = models.PositiveSmallIntegerField(null=True)
     additional_comment = models.TextField(blank=True, null=True)
 

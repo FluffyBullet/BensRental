@@ -26,12 +26,13 @@ class Make_booking(generic.ListView):
     model = Booking
     template_name = 'booking.html'
 
-    def post(request):
-        if request.POST:
-            form = BookingForm(request.POST)
-            if form.is_valid():
-                form.save()
-            return render(Availability)
-        return HttpResponse('availability.html')
-    
+    def post(self, request, *args, **kwargs):
+        req_booking = BookingForm(data=request.POST)
+        _req_ref = str(req_booking.week_requested)+ str(req_booking.year_requested)
+        queryset = Booking.objects.filter(booking_reference = _req_ref)
+        if req_booking.is_valid():
+            print(req_booking)
+            if queryset == True:
+                print("It works, Huzah!")
+            return HttpResponse(request, 'availability.html')
 

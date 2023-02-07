@@ -41,6 +41,7 @@ class Booking(models.Model):
     number_of_pets = models.SmallIntegerField(blank=True)
     charge = models.PositiveSmallIntegerField(null=True)
     additional_comment = models.TextField(blank=True, null=True)
+    provided_number = models.CharField(max_length=11, blank=True, null=True)
 
     def __str__(self):
         return "Booking reference: " + str(self.booking_reference)

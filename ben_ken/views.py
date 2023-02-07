@@ -25,7 +25,6 @@ class Availability(generic.ListView):
 class Make_booking(generic.ListView):
     model = Booking
     template_name = 'booking.html'
-    print(model)
     def post(self, request, *args, **kwargs):
         date_chosen = request.POST["week_selection"]
         _check_ref = str(date_chosen[:4]) + str(date_chosen[6:])
@@ -35,14 +34,21 @@ class Make_booking(generic.ListView):
         print(queryset)
 
         if queryset.if_available == True:
+            Booking.booking_reference = _check_ref
+            Booking.booker = request.user.username
             Booking.number_of_o18 = request.POST["adults"]
+            Booking.number_of_u18 = request.POST["under_18"]
+            Booking.number_of_pets = request.POST["pets"]
+            Booking.provided_number = request.POST["contact_number"]
             Booking.additional_comment = request.POST["message"]
+            Booking.if_available = False
             print(request.POST["message"])
+            Booking.save(self)
         else:
             print("Already booked")
 
 
-        return HttpResponse(request, 'availability.html')
+        return render(request, 'availability.html')
 
 
 

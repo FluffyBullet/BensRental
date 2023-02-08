@@ -42,7 +42,12 @@ class Make_booking(generic.ListView):
             Booking.provided_number = request.POST["contact_number"]
             Booking.additional_comment = request.POST["message"]
             Booking.if_available = False
-            print(request.POST["message"])
+            print("Booking Reference: " + _check_ref)
+            print("Booking person: " + request.user.username)
+            print("Adults's: " + request.POST["adults"])
+            print("Kids's: " + request.POST["under_18"])
+            print("provided number: " + request.POST["contact_number"])
+            print("additional comment: " + request.POST["message"])
             Booking.save(self)
         else:
             print("Already booked")

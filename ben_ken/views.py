@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.views import generic
-from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
+from django.http import HttpResponse
 from django.template import loader
 from .models import *
 
@@ -38,10 +39,16 @@ class Make_booking(generic.ListView):
 
         if request.POST["adults"] != "":
             _o18 = request.POST["adults"]
+
         if request.POST["under_18"] != "" :
-            _o18 = request.POST["under_18"]
+            _u18 = request.POST["under_18"]
+
         if request.POST["pets"] != "" :
-            _o18 = request.POST["pets"]
+            _pets = request.POST["pets"]
+
+        print("Over18 = " + str(_o18))
+        print("Under18 = " + str(_u18))
+        print("pets = " + str(_pets))
 
         if queryset.if_available == True:
             e = Booking(
@@ -58,11 +65,8 @@ class Make_booking(generic.ListView):
                 if_available = False,
             )
             e.save()
-            return render(request, 'availability.html')
+            messages.success(request,"Thank you for your booking, this has been processed.")
+            return redirect('/availability', messages)
         else:
-            print("Already booked")
-            return False
-
-
-
-
+            messages.warning(request,"This week has already been booked, please select another week.")
+            return redirect('/booking',messages)

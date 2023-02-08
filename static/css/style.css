@@ -53,6 +53,16 @@ hr {
     text-align:center;
 }
 
+.warning { 
+    color:red;
+    margin:0 auto;
+}
+
+.success {
+    color:blue;
+    margin:0 auto;
+}
+
 /** 
 Index/home page
 **/

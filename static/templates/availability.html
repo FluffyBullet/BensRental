@@ -3,6 +3,13 @@
 {% block content %}
 
 <div>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
     {% for week in booking_list %}
 
         {% if week.if_available == True %}

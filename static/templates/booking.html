@@ -13,7 +13,16 @@
 
         <div class="input-group">
             <label for="week_selection" class="input-group-label"> Week Selected</label>
-            <input type="week" id="week_selection" name="week_selection" class="input-group-field">
+            <div>
+                <input type="week" id="week_selection" name="week_selection" class="input-group-field">
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
         </div>
 
         <div class="input-group attendance">
@@ -22,7 +31,7 @@
         </div>
 
         <div class="input-group attendance">
-            <label for="u18" id="u18" name="under_18" class="input-group-label">Under 18:</label>
+            <label for="under18" id="under18" name="under_18" class="input-group-label">Under 18:</label>
             <input type="number" name="under_18" id="under_18" class="input-group-field">
         </div>
         <div class="input-group attendance">

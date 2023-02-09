@@ -1,63 +1,37 @@
 {% extends "base.html" %}
-{% load static %}
-    <script src="{% static 'javascript/details_js.js' %}"></script>
-
 {% block content%}
+{% load static %}
+<script src="{% static '/assets/javascript/details.js' %}" defer="True"></script>
+
 <div id="caravan_details">
     <h2 class="header"> Caravan Images</h2>
-    <div id="images">
-      <div class="grid-x grid-padding-x align-middle" id="left">
-          <i class="fa-solid fa-arrow-left"></i>
-      </div>
-      <div class="picture small">
-          <img src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/external_balcany_top.png' %}" alt="Image ontop of the decking">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one.png' %}" alt="Main Bedroom picture 2">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two_side.png' %}" alt="Twin Bedroom picture 1">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one_side.png' %}" alt="Main Bedroom picture 1">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two.png' %}" alt="Twin Bedroom picture 2">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_hallway.png' %}" alt="Hallway">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one_side.png' %}" alt="Bathroom">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_kitchen.png' %}" alt="Kitchen">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_dining.png' %}" alt="Dining Room">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_lobby_2.png' %}" alt="Internal lounge picture 1">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_lobby.png' %}" alt="Internal lounce picture 2">
-      </div>
-      <div class="picture small hide">
-          <img src="{% static 'assets/images/kennedy_caravan/internal_seating.png' %}" alt="Seating available inside the caravan.">
-      </div>
-      <div class="grid-x grid-padding-x align-middle " id="right">
-          <i class="fa-solid fa-arrow-right"></i>
-      </div>
-    </div> 
+    <div class="picture-div">
+        <div class="grid-x grid-padding-x align-middle" id="left">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div id="images">
+            <div class="picture small" id="host">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/external_window.png' %}" alt="Front of the caravan">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one.png' %}" alt="Bathroom">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/external_balcany_front.png' %}" alt="Front of the balcany">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/external_balcany_top.png' %}" alt="Image ontop of the decking">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one.png' %}" alt="Main Bedroom picture 2">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two_side.png' %}" alt="Twin Bedroom picture 1">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bedroom_one_side.png' %}" alt="Main Bedroom picture 1">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bedroom_two.png' %}" alt="Twin Bedroom picture 2">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_hallway.png' %}" alt="Hallway">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_bathroom_one_side.png' %}" alt="Bathroom">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_kitchen.png' %}" alt="Kitchen">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_dining.png' %}" alt="Dining Room">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_lobby_2.png' %}" alt="Internal lounge picture 1">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_lobby.png' %}" alt="Internal lounce picture 2">
+                <img class="caravan_image" src="{% static 'assets/images/kennedy_caravan/internal_seating.png' %}" alt="Seating available inside the caravan.">
+            </div>
+        </div> 
+        <div class="grid-x grid-padding-x align-middle " id="right">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </div>
 <hr>
     <div class="renters_comments">
         <h4 class="header">Customers Reviews</h4>
@@ -77,5 +51,5 @@
         {% endfor%}
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
 {%endblock%}

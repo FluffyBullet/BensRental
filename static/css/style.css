@@ -87,25 +87,41 @@ end of Index/home Page
 Start of details page 
 **/
 
-.picture {
-    width:50%;
+#caravan_details{
+    margin: 0 20px;
+}
+
+.picture img{
+    display:none;
+    max-height:250px
 }
 
 #images {
-    display:flex;
-    justify-content: center;
+    width:65%;
+    display:inline-block;
+    height:250px;
+
 }
 
 #left, #right {
     font-size:26px;
-    margin:0 25px;
     color:rgb(48, 48, 252);
+    display:inline-block;
+    width:15%
 }
-
 .callout {
     width:80%;
     margin:15px;
     font-size:14px;
+}
+
+.picture-div {
+    width:100%;
+    height:250px;
+    justify-content: center;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
 }
 
 /** 

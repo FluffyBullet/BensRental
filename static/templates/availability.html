@@ -3,6 +3,11 @@
 {% block content %}
 
 <div>
+    {% if user.is_staff %}
+    <div>
+        <h3>Testing</h3>
+    </div>
+    {% endif %}
     {% if messages %}
     <div class="messages">
         {% for message in messages %}

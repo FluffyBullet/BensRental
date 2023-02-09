@@ -14,16 +14,14 @@
         <div class="input-group">
             <label for="week_selection" class="input-group-label"> Week Selected</label>
             <div>
-                <input type="week" id="week_selection" name="week_selection" class="input-group-field">
-                {% if messages %}
-                <div class="messages">
-                    {% for message in messages %}
-                    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-                    {% endfor %}
-                </div>
-                {% endif %}
+                <input type="week" id="week_selection" name="week_selection" class="input-group-field week">
             </div>
         </div>
+        {% if messages == messages.warning%}
+        <div class="messages">
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        </div>
+        {% endif %}
 
         <div class="input-group attendance">
             <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>

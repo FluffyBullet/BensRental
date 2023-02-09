@@ -8,11 +8,9 @@
         <h3>Testing</h3>
     </div>
     {% endif %}
-    {% if messages %}
+    {% if messages == messages.success %}
     <div class="messages">
-        {% for message in messages %}
         <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-        {% endfor %}
     </div>
     {% endif %}
     {% for week in booking_list %}

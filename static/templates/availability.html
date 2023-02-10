@@ -4,9 +4,28 @@
 
 <div>
     {% if user.is_staff %}
-    <div>
-        <h3>Testing</h3>
-    </div>
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+        <li href="#">
+            <p>Add new year</p>
+            <ul class="menu vertical nested">
+                <form action="{% url 'visits'%}" method="POST" enctype="multipart/form-data">
+                    <div class="booking_form">
+                        <div class="input-group">
+                            <label for="add_year" name="add_year" class="input-group-label">
+                                Year:
+                            </label>
+                            <input type="number" min="2020" max="2100" pattern="[0-9]{4}"/>
+                        </div>
+                    </div>
+                    <div class="boooking_form">
+                        <div class="input-group center">
+                            <input type="submit" value="Create"/>
+                        </div>
+                    </div>
+                </form>
+            </ul>
+        </li>
+    </ul>
     {% endif %}
     {% if messages == messages.success %}
     <div class="messages">

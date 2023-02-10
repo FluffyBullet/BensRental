@@ -23,6 +23,23 @@ class Availability(generic.ListView):
     paginate_by = 8
     queryset = Booking.objects.order_by('booking_reference')
 
+    def add_booking(request):
+        year = request.POST["year"]
+        new = Booking.objects.all()
+        n = 0
+        if n <= 52:
+            new = Booking(
+                year_booking = year,
+                week_booking = n,  
+                booking_reference = str(year) + str(n),
+                number_of_o18 = 0,
+                number_of_u18 = 0,
+                number_of_pets = 0,
+                if_available = True,
+                charge = 185,
+                )
+        new.save()
+
 
 class Make_booking(generic.ListView):
     model = Booking
@@ -84,6 +101,8 @@ class my_visits(generic.ListView):
         return render(request, 'my_visits.html',{
             "user":user,
             "visit":queryset,
-
         })
+    
+    def post(self, request):
+        stay = Booking.booking_reference
 

@@ -36,9 +36,11 @@
 
         {% if week.if_available == True %}
             <div class="avail_check callout success">
-                <h2>Week {{ week.week_booking }}</h2>
-                <h3>of year {{ week.year_booking }}</h3>
+                <a href="{% url 'make_booking' %}">
+                <h2>Week <span class="available_week">{{ week.week_booking }}</span></h2>
+                <h3>of year <span class="available_year">{{ week.year_booking }}</span></h3>
                 <p>Charge for this week is £{{ week.charge }}</p>
+                </a>
             </div>
         {% elif week.if_available == False %}
         <div class="avail_check callout alert">

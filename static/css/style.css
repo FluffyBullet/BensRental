@@ -52,8 +52,8 @@ nav a:hover, .dropdown:hover .dropbtn {
 footer {
     background-color:rgb(48, 48, 252);
     color:white;
-    position:relative;
-    margin-top:auto;
+    position:absolute;
+    bottom:0;
     height:10rem;
     width:100vw; 
     padding-top:10px;
@@ -68,6 +68,15 @@ footer a{
     text-decoration-line:underline;
     color:white;
     font-size:12px;
+}
+
+#page-container { 
+    position:relative;
+    min-height:100vh;
+}
+
+#content-container{
+    padding-bottom:10rem;
 }
 
 /**

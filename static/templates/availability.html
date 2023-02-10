@@ -52,7 +52,11 @@
         <div class="avail_check callout alert">
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
+            {% if user.is_staff %}
+            <p>Booked by: {{week.booker}}</p>
+            {% else %}
             <p>Sorry, this week is not available.</p>
+            {% endif %}
         </div>
         {% endif %}
     {% endfor %}

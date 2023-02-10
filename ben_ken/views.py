@@ -80,7 +80,7 @@ class my_visits(generic.ListView):
     def populate_list(self, request):
         user= request.user.username
         template = loader.get_template('my_visits.html')
-        queryset = Booking.objects.filter('booker'==user)
+        queryset = Booking.objects.filter('booker'==user).order_by("-booking_reference")
         return render(request, 'my_visits.html',{
             "user":user,
             "visit":queryset,

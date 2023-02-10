@@ -2,19 +2,18 @@
 {% block content %}
 {% load static %}
 
-<h1>testing</h1>
+<h1>My Stays</h1>
 
 {% for visit in booking_list %}
     {% if visit.booker == user %}
-        <div>
-            <p>Week: {{ visit.week_booking }}</p>  
-            <p>Visitor: {{ visit.booker }}</p>
-            <h3>testing</h3>
+        <div class="visit_display">
+            <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
+            <p>Week charge {{ visit.charge }} </p>
+            <hr>
+            <h6>My Comments/Notes</h6>
+            
         </div>
     {% endif %}
 {% endfor %}
-
-{{ visit }}
-{{ user }}
 
 {% endblock %}

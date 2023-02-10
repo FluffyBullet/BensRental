@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.template import loader
+from django.urls import reverse
 from .models import *
 
 def main(request):
@@ -48,10 +49,23 @@ class Availability(generic.ListView):
         else:
             raise ImportError;
 
+    def delete(request, booking_reference):
+        week = Booking.objects.get(booking_reference = booking_reference)
+        week.delete()
+        return HttpResponse(reverse('index)'))
+    
+    def update(request, booking_reference):
+        booking_record = Booking.objects.get(booking_reference=booking_reference)
+        template = loader.get_template('update_booking.html')
+        context = {
+            'booking': booking_record
+        }
+        return HttpResponse(template.render(context.request)
+
+
 class Make_booking(generic.ListView):
     model = Booking
     template_name = 'booking.html'
-
 
     def post(self, request, *args, **kwargs):
         date_chosen = request.POST["week_selection"]
@@ -95,27 +109,27 @@ class Make_booking(generic.ListView):
         else:
             messages.warning(request,"This week has already been booked, please select another week.")
             return redirect('/booking',messages)
+
         
-class my_visits(generic.ListView):
+class My_visits(generic.ListView):
     model = Booking
     template_name = 'my_visits.html'
+    paginate_by = 2
 
     @login_required
-    def populate_list(self, request):
+    def post(self, request, *args, **kwargs):
+        print(request.POST["overall_comment"])
+        stay = request.POST["overall_comment"]
+        print(stay)
         user= request.user.username
-        template = loader.get_template('my_visits.html')
-        queryset = Booking.objects.filter('booker'==user).order_by("-booking_reference")
-        return render(request, 'my_visits.html',{
-            "user":user,
-            "visit":queryset,
-        })
-    
-    def post(self, request):
-        stay = Booking.booking_reference
-        user= request.user.username
-        queryset = Booking.objects.all().values()
-        return render(request, 'my_visits.html',{
-            "user":user,
-            "visit":queryset,
-        })
+        queryset = Booking.objects.filter(booker=user).order_by('-booking_reference')
+        c = Comment(
+            booking_reference = stay,
+            overall_comment = request.POST["overall_comment"],
+            personal_comment = request.POST["personal_comment"],
+            overall_feeling = request.POST["overall_feeling"],
+        )
+        c.save()
+        return HttpResponse('my_visits.html')
+
 

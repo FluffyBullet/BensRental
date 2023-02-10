@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<h1>My Stays</h1>
+<h1 class="header">My Stays</h1>
 
 {% for visit in booking_list %}
     {% if visit.booker == user %}
@@ -10,12 +10,61 @@
             <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
             <p>Week charge {{ visit.charge }} </p>
             <hr>
+            <p class="hidden" id="myref"> {{visit.booking_reference}}</p>
             <h6>My Comments/Notes</h6>
             <div>
                 <p><i class="fa-regular fa-square-plus"></i> Add a new event</p>
+                <form  href="{% url 'my_visits' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p>Add a personal comment:</p>
+                    <input type="text" id="personal_comment" name="personal_comment" placeholder="Your personal comment here1">
+                    <br>
+                    <p>Add an overall comment:</p>
+                    <p>This will be displayed on the main website</p>
+                    <input type="text" id="overall_comment" name="overall_comment" placeholder="Your comment for the front page" >
+                    <br>
+                    <select type="option" id="overall_feeling">
+                        <option value="happy">Happy</option>
+                        <option value="indifferent">Indifferent</option>
+                        <option value="unhappy">Unhappy</option>
+                    </select>
+
+                    <input type="submit" value="Submit"/>
+
+                </form>
+            </div>
+            <div>
+                {% for comments in comment_list %}
+                <div class="callout grid-x grid-padding-x align-center-middle text-center">
+                  <p>{{ comments.overall_comment }}<br></p>
+                  <hr>
+                  <p>by {{comments.profile}}</p>
+                </div>
+                {% endfor %}
             </div>
         </div>
     {% endif %}
 {% endfor %}
+<div class="pagination grid-x grid-padding-x align-center-middle text-center">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="my_visits?page=1">&laquo; first</a>
+            <a href="my_visits?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+    </span>
+    
+    <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    <span class="step-links">
+        {% if page_obj.has_next %}
+            <a href="my_visits?page={{ page_obj.next_page_number }}">next</a>
+            <a href="my_visits?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+
+</div>
+
 
 {% endblock %}

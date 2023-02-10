@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <h1 class="header">Updating a booking</h1>
+    <div>
+        <form action="update_booking/{{booking.booking_record}}" method="POST">
+            {% scrf_token %}
+            <div class="input-group attendance">
+                <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>
+                <input type="number" name="adults" id="adults" class="input-group-field" placeholder="1">
+            </div>
+    
+            <div class="input-group attendance">
+                <label for="under18" id="under18" name="under_18" class="input-group-label">Under 18:</label>
+                <input type="number" name="under_18" id="under_18" class="input-group-field">
+            </div>
+            <div class="input-group attendance">
+                <label for="pets" id="pets" name="pets" class="input-group-label">Pets:</label>
+                <input type="number" name="pets" id="pets" class="input-group-field">
+            </div>
+    
+            <div class="input-group">
+                <label for="contact_number" id="contact_number" name="contact_number" class="input-group-label">Contact Number:</label>
+                <input type="tel" name="contact_number" id="contact_number" pattern="[0-9]{11}"value="{{ profile.contact_number }}" class="input-group-field">
+            </div>
+    
+            <h3>Message for the host:</h3>
+            
+            <textarea id="message" name="message" rows="4" cols="20">
+            </textarea>
+    
+            <input type="submit" name="submit" id="submit" value="Submit Request">
+        </div>  
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -20,7 +20,7 @@ class Customer_feedback(generic.ListView):
 class Availability(generic.ListView):
     model = Booking
     template_name = 'availability.html'
-    paginate_by = 8
+    paginate_by = 3
     queryset = Booking.objects.order_by('booking_reference')
 
     def post(self, request, *args,**kwargs):

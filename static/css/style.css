@@ -168,6 +168,13 @@ Start of Availability Checker
     border-radius:16px;
 }
 
+.step-links { 
+    width:100%;
+}
+.step-links a, .step-links span {
+    display:inline-block;
+}
+
 /** Booking page **/
 
 .booking_form { 

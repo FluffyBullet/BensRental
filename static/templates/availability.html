@@ -1,31 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
 <div>
     {% if user.is_staff %}
+    <hr>
     <ul class="vertical menu accordion-menu" data-accordion-menu>
         <li href="#">
-            <p>Add new year</p>
+            <p class="text-center">Admin section only - Add new year</p>
             <ul class="menu vertical nested">
-                <form action="{% url 'visits'%}" method="POST" enctype="multipart/form-data">
+                <form action="{% url 'check_avail'%}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="booking_form">
                         <div class="input-group">
-                            <label for="add_year" name="add_year" class="input-group-label">
+                            <label for="new_year" class="input-group-label">
                                 Year:
                             </label>
-                            <input type="number" min="2020" max="2100" pattern="[0-9]{4}"/>
+                            <input type="number" name="new_year" id="new_year" min="2020" max="2100" pattern="[0-9]{4}"/>
                         </div>
-                    </div>
-                    <div class="boooking_form">
-                        <div class="input-group center">
-                            <input type="submit" value="Create"/>
+                        <div class="boooking_form text-center">
+                            <div class="input-group align-center">
+                                <input type="submit" value="Create"/>
+                            </div>
                         </div>
                     </div>
                 </form>
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
             </ul>
         </li>
     </ul>
+    <hr>
     {% endif %}
     {% if messages == messages.success %}
     <div class="messages">
@@ -37,8 +43,8 @@
         {% if week.if_available == True %}
             <div class="avail_check callout success">
                 <a href="{% url 'make_booking' %}">
-                <h2>Week <span class="available_week">{{ week.week_booking }}</span></h2>
-                <h3>of year <span class="available_year">{{ week.year_booking }}</span></h3>
+                <h2>Week <span id="available_week">{{ week.week_booking }}</span></h2>
+                <h3>of year <span id="available_year">{{ week.year_booking }}</span></h3>
                 <p>Charge for this week is £{{ week.charge }}</p>
                 </a>
             </div>
@@ -68,4 +74,5 @@
         {% endif %}
     </span>
 </div>
+
 {% endblock %}

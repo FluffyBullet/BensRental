@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<h1>testing</h1>
+
+{% for visit in booking_list %}
+    {% if visit.booker == user %}
+        <div>
+            <p>Week: {{ visit.week_booking }}</p>  
+            <p>Visitor: {{ visit.booker }}</p>
+            <h3>testing</h3>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{{ visit }}
+{{ user }}
+
+{% endblock %}

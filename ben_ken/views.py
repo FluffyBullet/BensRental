@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
@@ -70,3 +71,19 @@ class Make_booking(generic.ListView):
         else:
             messages.warning(request,"This week has already been booked, please select another week.")
             return redirect('/booking',messages)
+        
+class my_visits(generic.ListView):
+    model = Booking
+    template_name = 'my_visits.html'
+
+    @login_required
+    def populate_list(self, request):
+        user= request.user.username
+        template = loader.get_template('my_visits.html')
+        queryset = Booking.objects.filter('booker'==user)
+        return render(request, 'my_visits.html',{
+            "user":user,
+            "visit":queryset,
+
+        })
+

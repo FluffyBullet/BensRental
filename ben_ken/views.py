@@ -72,6 +72,8 @@ class Availability(generic.ListView):
                 number_of_pets = updated["pets"],
                 provided_number = updated["contact_number"],
                 additional_comment = updated["message"],
+                charge = stay.hire,
+                if_available = False,
             )
             update.save()
             return redirect('/availability')

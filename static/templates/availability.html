@@ -45,7 +45,7 @@
                 <p>Charge for this week is £{{ week.charge }}</p>
                 </a>
             </div>
-        {% elif week.if_available == False %}
+        {% else %}
         <div class="avail_check callout alert">
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
@@ -55,8 +55,17 @@
             <p class="right">
                  
             </p>
+            {% elif week.booker == user.username %}
+            <p>testing</p>
+            <div>
+                <p>View info <i class="fa-solid fa-circle-info"></i></p>
+                <p>Update <i class="fa-solid fa-pen"></i></p>
+                <p>Un-book <i class="fa-solid fa-square-minus"></i></p>
+            </div>
             {% else %}
             <p>Sorry, this week is not available.</p>
+            {{ user.username}}
+            {{ week.booker }}
             {% endif %}
         </div>
         {% endif %}

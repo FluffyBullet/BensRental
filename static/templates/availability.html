@@ -51,14 +51,7 @@
             <h3>of year {{ week.year_booking }}</h3>
             {% if user.is_staff %}
             <p>Booked by: {{week.booker}}</p>
-            <div id="delete">
-                <span href="{% url 'delete' %}"><br>
-                <i class="fa-solid fa-trash"></i>
-                <p>Delete week</p>
-                </span>
-                </div>
 
-            </div>
             <p class="right">
                  
             </p>

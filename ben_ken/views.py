@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -21,7 +21,7 @@ class Customer_feedback(generic.ListView):
 class Availability(generic.ListView):
     model = Booking
     template_name = 'availability.html'
-    paginate_by = 3
+    paginate_by = 20
     queryset = Booking.objects.order_by('booking_reference')
 
     def post(self, request, *args,**kwargs):
@@ -49,18 +49,33 @@ class Availability(generic.ListView):
         else:
             raise ImportError;
 
-    def delete(request, booking_reference):
-        week = Booking.objects.get(booking_reference = booking_reference)
+    def delete(request):
+        week = Booking.objects.get(Booking.booking_reference)
         week.delete()
         return HttpResponse(reverse('index)'))
     
     def update(request, booking_reference):
-        booking_record = Booking.objects.get(booking_reference=booking_reference)
-        template = loader.get_template('update_booking.html')
+        stay = get_object_or_404(Booking, booking_reference = booking_reference)
         context = {
-            'booking': booking_record
+            'booking': stay,
         }
-        return HttpResponse(template.render(context.request)
+        updated = request.POST
+
+        if request.method == "POST":
+            update = Booking(
+                booking_reference = stay.booking_reference,
+                booker = stay.booker,
+                week_booking = stay.week_booking,
+                year_booking = stay.year_booking,
+                number_of_o18 = updated["adults"], 
+                number_of_u18 = updated["under_18"],
+                number_of_pets = updated["pets"],
+                provided_number = updated["contact_number"],
+                additional_comment = updated["message"],
+            )
+            update.save()
+            return redirect('/availability')
+        return render(request,'update_booking.html', context)
 
 
 class Make_booking(generic.ListView):

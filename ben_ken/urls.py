@@ -7,7 +7,7 @@ urlpatterns = [
     path('availability/', views.Availability.as_view(), name='check_avail'),
     path('booking/', views.Make_booking.as_view(), name='make_booking'),
     path('my_visits/', views.My_visits.as_view(), name='my_visits'),
-    path('update_booking/<int:booking_ref>', views.update_booking.as_view(), name="update_booking")
-    path('delete/<int:booking_ref>', views.delete, name="delete")
+    path('update_booking/<int:booking_reference>', views.Availability.update , name="update_booking"),
+    # path('delete/<int:booking_ref>', views.delete, name="delete")
     path('accounts/', include('allauth.urls')),
 ]

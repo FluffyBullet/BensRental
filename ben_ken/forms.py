@@ -1,7 +1,7 @@
 from django import forms
 from .models import Booking, Comment
 
-class BookingForm(forms.Form):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields=(

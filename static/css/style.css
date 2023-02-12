@@ -184,6 +184,19 @@ Start of Availability Checker
     display:inline-block;
 }
 
+.avail_check_half_one{
+    width:50%;
+    display:inline-block;
+}
+.avail_check_half_two {
+    width:30%;
+    float:right;
+    display:flex;
+    justify-content:center;
+    font-size:x-large;
+    
+}
+
 /** Booking page **/
 
 .booking_form { 

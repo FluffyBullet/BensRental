@@ -39,11 +39,17 @@
 
         {% if week.if_available == True %}
             <div class="avail_check callout success">
-                <a href="{% url 'make_booking' %}">
+                <div class="avail_check_half_one">
                 <h2>Week <span id="available_week">{{ week.week_booking }}</span></h2>
                 <h3>of year <span id="available_year">{{ week.year_booking }}</span></h3>
                 <p>Charge for this week is £{{ week.charge }}</p>
+            </div>
+            <div class="avail_check_half_two">
+                <a href="{% url 'make_booking' %}">
+                    <h3> Book </h3>
+                    <i class="fa-solid fa-book"></i>
                 </a>
+            </div>
             </div>
         {% else %}
         <div class="avail_check callout alert">

@@ -47,11 +47,31 @@ class Booking(models.Model):
         return "Booking reference: " + str(self.booking_reference)
  
 
-class Comment(models.Model):
-    comment_id = models.AutoField(primary_key=True, unique=True)
-    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.DO_NOTHING)
-    profile = models.ForeignKey(Profile,to_field="profile_reference", on_delete=models.DO_NOTHING)
+class OverallComment(models.Model):
+    o_comment_id = models.AutoField(primary_key=True, unique=True)
+    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.CASCADE)
     overall_comment = models.CharField(max_length=250)
+    happy ="Happy"
+    indifferent = "Indifferent"
+    unhappy ="Unhappy"
+
+    overall_feeling = models.CharField(max_length=11,
+        choices=(
+        (happy, "Happy"),
+        (indifferent, "Indifferent"),
+        (unhappy, "Unhappy"),
+        )
+    )
+
+    def __int__(self):
+        return self.o_comment_id
+
+    def __str__(self):
+        return "comment" + str(self.o_comment_id) + "by" + str(self.booking_reference.booker) 
+    
+class PersonalComment(models.Model):
+    p_comment_id = models.AutoField(primary_key=True, unique=True)
+    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.CASCADE)
     personal_comment = models.CharField(max_length=250)
     happy ="Happy"
     indifferent = "Indifferent"
@@ -66,7 +86,7 @@ class Comment(models.Model):
     )
 
     def __int__(self):
-        return self.comment_id
+        return self.p_comment_id
 
     def __str__(self):
-        return "comment" + str(self.comment_id) + "by" + str(self.profile) 
+        return "comment" + str(self.p_comment_id) + "by" + str(self.booking_reference.booker) 

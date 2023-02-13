@@ -13,8 +13,8 @@ def main(request):
 
 
 class Customer_feedback(generic.ListView):
-    model= Comment
-    queryset = Comment.objects.order_by('-comment_id')
+    model= OverallComment
+    queryset = OverallComment.objects.order_by('-o_comment_id')
     paginate_by = 4
     template_name = 'details.html'
 
@@ -129,7 +129,7 @@ class Make_booking(generic.ListView):
 
         
 class My_visits(generic.ListView):
-    model = Booking, Comment
+    model = Booking, PersonalComment
     template_name = 'my_visits.html'
     paginate_by = 1
 

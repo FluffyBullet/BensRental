@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking, Profile, Comment
+from .models import Booking, Profile, OverallComment
 
 admin.site.register(Profile)
 
@@ -10,7 +10,7 @@ class BookingAdmin(admin.ModelAdmin):
 admin.site.register(Booking, BookingAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('overall_feeling',)
+    list_display = ('overall_feeling','booking_reference')
     list_filter = ('overall_feeling',)
 
-admin.site.register(Comment, CommentAdmin)
+admin.site.register(OverallComment, CommentAdmin)

@@ -129,34 +129,14 @@ class Make_booking(generic.ListView):
 
         
 class My_visits(generic.ListView):
-    model = Booking
+    model = Booking, Comment
     template_name = 'my_visits.html'
-    paginate_by = 2
+    paginate_by = 1
 
-    def get(request):
-        user= request.user.username
-        queryset = Booking.objects.filter(booker=user).order_by('-booking_reference')
+    def get(self, request):
+        template_name = 'my_visits.html'
+        queryset = Booking.objects.filter(booker=request.user.username)
         context = {
-            'visits' : queryset,
-        }    
-        return HttpResponse(context)
-
-    @login_required
-    def post(self, request, *args, **kwargs):
-        print(request.POST["overall_comment"])
-        stay = request.POST["overall_comment"]
-        print(stay)
-        user= request.user.username
-        queryset = Booking.objects.filter(booker=user).order_by('-booking_reference')
-        context = {
-            'visits' : queryset,
+            'visits':queryset
         }
-        c = Comment(
-            booking_reference = stay,
-            overall_comment = request.POST["overall_comment"],
-            personal_comment = request.POST["personal_comment"],
-            overall_feeling = request.POST["overall_feeling"],
-        )
-        c.save()
-
-        return HttpResponse(context, 'my_visits.html')
+        return render(request,'my_visits.html', context)

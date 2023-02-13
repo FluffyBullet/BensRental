@@ -197,6 +197,13 @@ Start of Availability Checker
     
 }
 
+#edit_booking div {
+    width:30%;
+    display:inline-block;
+    text-align:center;
+    height:40px;
+}
+
 /** Booking page **/
 
 .booking_form { 

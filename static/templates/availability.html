@@ -35,8 +35,7 @@
         <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
     </div>
     {% endif %}
-    {% for week in booking_list %}
-
+    {% for week in booking_list %}    
         {% if week.if_available == True %}
             <div class="avail_check callout success">
                 <div class="avail_check_half_one">
@@ -52,28 +51,38 @@
             </div>
             </div>
         {% else %}
+        {% if user.username|lower == week.booker|lower %}
         <div class="avail_check callout alert">
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
-            {% if user.is_staff %}
-            <p>Booked by: {{week.booker}}</p>
-
-            <p class="right">
-                 
-            </p>
-            {% elif week.booker == user.username %}
-            <p>testing</p>
-            <div>
-                <p>View info <i class="fa-solid fa-circle-info"></i></p>
-                <p>Update <i class="fa-solid fa-pen"></i></p>
-                <p>Un-book <i class="fa-solid fa-square-minus"></i></p>
+            <div id="edit_booking">
+                <div>
+                    <i class="fa-solid fa-circle-info"></i><br>
+                    <p>View info</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-pen"></i><br>
+                <p>Update </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-square-minus"></i><br>
+                <p>Cancel booking </p>
+                </div>
             </div>
-            {% else %}
-            <p>Sorry, this week is not available.</p>
-            {{ user.username}}
-            {{ week.booker }}
-            {% endif %}
         </div>
+        {% elif user.is_staff %}
+        <div class="avail_check callout alert">
+            <h2>Week {{ week.week_booking }}</h2>
+            <h3>of year {{ week.year_booking }}</h3>
+            <p>Booked by: {{week.booker}}</p>
+        </div>
+            {% else %}
+            <div class="avail_check callout alert">
+                <h2>Week {{ week.week_booking }}</h2>
+                <h3>of year {{ week.year_booking }}</h3>
+                <p>Sorry, this week is not available.</p>
+            </div>
+            {% endif %}
         {% endif %}
     {% endfor %}
 </div>

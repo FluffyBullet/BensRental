@@ -4,6 +4,16 @@
 
 <h1 class="header">My Stays</h1>
 
+{% for visit in visits %}
+<div class="visit_display">
+    <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
+    <p>Week charge {{ visit.charge }} </p>
+    <hr>
+    <p class="hidden" id="myref"> {{visit.booking_reference}}</p>
+    <h6>My Comments/Notes</h6>
+<div>
+{% endfor %}
+<h6>test line </h6>
 {% for visit in booking_list %}
     {% if visit.booker == user %}
         <div class="visit_display">

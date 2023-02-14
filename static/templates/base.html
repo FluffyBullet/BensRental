@@ -23,7 +23,6 @@
                     <li><a href="{% url 'check_avail' %}"><i class="fa-solid fa-calendar-check"></i>Availability</a></li>
                     <li><a href="{% url 'make_booking' %}"><i class="fa-solid fa-calendar-plus"></i>Booking</a></li>
                     {% if user.is_authenticated %}
-                    <ul class="vertical dropdown menu" data-dropdown-menu style="max-width:250px;">
                         <li>
                         <a href="#">{{ user.username }}</a>
                         <ul class="vertical menu nested">
@@ -31,7 +30,6 @@
                             <li><a href="{% url 'account_logout' %}"></i>Sign Out</a></li>
                         </ul>
                         </li>
-                    </ul>
                     {% else %}
                     <li><a href="{% url 'account_login' %}"><i class="fa-solid fa-user"></i>Log-in</a></li>
                     {% endif %}

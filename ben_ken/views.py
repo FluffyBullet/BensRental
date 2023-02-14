@@ -7,9 +7,9 @@ from django.template import loader, Template
 from django.urls import reverse
 from .models import *
 
-def main(Template):
+def main(request):
     template = loader.get_template('index.html')
-    return HttpResponse(template.render())
+    return render(request,'index.html')
 
 
 class Customer_feedback(generic.ListView):

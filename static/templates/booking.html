@@ -12,7 +12,7 @@
     <div class="booking_form">
         <div class="input-group">
             <label for="email_address" class="input-group-label">E-mail address</label>
-            <input type="text" id="email" name="email_address" value="{{ user.email }}" class="input-group-field">
+            <input type="text" id="email" name="email_address" value="{{ user.email_address }}" class="input-group-field">
         </div>
 
         <div class="input-group">
@@ -26,21 +26,22 @@
             <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
         </div>
         {% endif %}
+        <div class="attendees">
+            <p class="header">Maximum 6 people</p>
+            <div class="input-group attendance">
+                <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>
+                <input type="number" name="adults" id="adults" class="input-group-field" pattern="[0-6]" placeholder="1">
+            </div>
 
-        <div class="input-group attendance">
-            <label for="adults" id="adults" name="adults" class="input-group-label">Adults:</label>
-            <input type="number" name="adults" id="adults" class="input-group-field" placeholder="1">
+            <div class="input-group attendance">
+                <label for="under18" id="under18" name="under_18" class="input-group-label">Under 18:</label>
+                <input type="number" name="under_18" id="under_18" class="input-group-field" pattern="[0-6]">
+            </div>
+            <div class="input-group attendance">
+                <label for="pets" id="pets" name="pets" class="input-group-label">Pets:</label>
+                <input type="number" name="pets" id="pets" class="input-group-field" pattern="[0-6]">
+            </div>
         </div>
-
-        <div class="input-group attendance">
-            <label for="under18" id="under18" name="under_18" class="input-group-label">Under 18:</label>
-            <input type="number" name="under_18" id="under_18" class="input-group-field">
-        </div>
-        <div class="input-group attendance">
-            <label for="pets" id="pets" name="pets" class="input-group-label">Pets:</label>
-            <input type="number" name="pets" id="pets" class="input-group-field">
-        </div>
-
         <div class="input-group">
             <label for="contact_number" id="contact_number" name="contact_number" class="input-group-label">Contact Number:</label>
             <input type="tel" name="contact_number" id="contact_number" pattern="[0-9]{11}"value="{{ profile.contact_number }}" class="input-group-field">

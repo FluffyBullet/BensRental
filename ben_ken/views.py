@@ -48,11 +48,6 @@ class Availability(generic.ListView):
             raise ValueError;
         else:
             raise ImportError;
-
-    def delete(request):
-        week = Booking.objects.get(Booking.booking_reference)
-        week.delete()
-        return HttpResponse(reverse('index)'))
     
     def update(request, booking_reference):
         stay = get_object_or_404(Booking, booking_reference = booking_reference)
@@ -72,12 +67,36 @@ class Availability(generic.ListView):
                 number_of_pets = updated["pets"],
                 provided_number = updated["contact_number"],
                 additional_comment = updated["message"],
-                charge = stay.hire,
+                charge = stay.charge,
                 if_available = False,
             )
             update.save()
             return redirect('/availability')
         return render(request,'update_booking.html', context)
+    
+    def cancel(request, booking_reference):
+        stay = get_object_or_404(Booking, booking_reference = booking_reference)
+        context = {
+            'stay': stay,
+        }
+        default = get_object_or_404(User, username = "ben")
+        if request.method == "POST":
+            cancel = Booking(
+                booking_reference = stay.booking_reference,
+                booker = default,
+                week_booking = stay.week_booking,
+                year_booking = stay.year_booking,
+                number_of_o18 = 0, 
+                number_of_u18 = 0,
+                number_of_pets = 0,
+                provided_number = 0,
+                additional_comment = 0,
+                charge = stay.charge,
+                if_available = True,
+            )
+            cancel.save()
+            return redirect('/availability')
+        return render(request,'cancel_booking.html', context)
 
 
 class Make_booking(generic.ListView):

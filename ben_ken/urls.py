@@ -8,6 +8,7 @@ urlpatterns = [
     path('booking/', views.Make_booking.as_view(), name='make_booking'),
     path('my_visits/', views.My_visits.as_view(), name='my_visits'),
     path('update_booking/<int:booking_reference>', views.Availability.update , name="update_booking"),
+    path('cancel_booking/<int:booking_reference>', views.Availability.cancel, name="cancel_booking"),
     # path('delete/<int:booking_ref>', views.delete, name="delete")
     path('accounts/', include('allauth.urls')),
 ]

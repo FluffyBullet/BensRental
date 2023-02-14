@@ -3,11 +3,11 @@ from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.template import loader
+from django.template import loader, Template
 from django.urls import reverse
 from .models import *
 
-def main(request):
+def main(Template):
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
 

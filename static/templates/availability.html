@@ -57,18 +57,14 @@
             <h3>of year {{ week.year_booking }}</h3>
             <div id="edit_booking">
                 <div>
-                    <i class="fa-solid fa-circle-info"></i><br>
-                    <p>View info</p>
-                </div>
-                <div>
                     <a href="{% url 'update_booking' week.booking_reference %}">
-                    <i class="fa-solid fa-pen"></i><br>
+                    <i class="fa-solid fa-pen"></i>
                 <p>Update </p>
             </a>
                 </div>
                 <div>
                     <a href="{% url 'cancel_booking' week.booking_reference %}">
-                    <i class="fa-solid fa-square-minus"></i><br>
+                    <i class="fa-solid fa-square-minus"></i>
                 <p>Cancel booking </p>
                 </a>
                 </div>

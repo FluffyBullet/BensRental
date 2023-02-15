@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h2 class="header">
+    Adding a comment
+</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <h5 class="header"> Your feedback</h5>
+    <textarea id="comment" name="comment"></textarea>
+    </div>
+    <div>
+        <h5>Overall rating:</h5>
+    <input type="radio" id="happy" name="overall_feeling" value="happy">
+    <label for="happy">Happy</label>
+    <input type="radio" id="indifferent" name="overall_feeling" value="indifferent">
+    <label for="indifferent">Indifferent</label>
+    <input type="radio" id="unhappy" name="overall_feeling" value="unhappy">
+    <label for="unhappy">Unhappy</label>
+    </div>
+    <div>
+        <input type="submit" value="Add Comment">
+    </div>
+</form>
+
+{% endblock %}

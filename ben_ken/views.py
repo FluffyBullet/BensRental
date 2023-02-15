@@ -148,14 +148,35 @@ class Make_booking(generic.ListView):
 
         
 class My_visits(generic.ListView):
-    model = Booking, PersonalComment
+    model = Booking, PersonalComment, OverallComment
     template_name = 'my_visits.html'
     paginate_by = 1
 
     def get(self, request):
         template_name = 'my_visits.html'
         queryset = Booking.objects.filter(booker=request.user.username)
+        public_comment = OverallComment.objects.all()
         context = {
-            'visits':queryset
+            'visits':queryset,
+            'o_comment' : public_comment,
         }
         return render(request,'my_visits.html', context)
+    
+    def add_overall_comment(request, booking_reference):
+        queryset = OverallComment.objects.filter(booking_reference = booking_reference )
+
+        book = Booking.booking_reference
+
+        if request.method == "POST":
+            ocomment = OverallComment(
+                booking_reference = int(booking_reference),
+                comment = request.POST["comment"],
+                overall_feeling = request.POST["overall_feeling"],
+            )
+            ocomment.save()
+            return redirect('/my_visits')
+        return render(request,'add_comment.html')
+
+    def add_personal_comment(self,request):
+        
+        return render(request,'add_comment.html')

@@ -49,17 +49,16 @@ class Booking(models.Model):
 
 class OverallComment(models.Model):
     o_comment_id = models.AutoField(primary_key=True, unique=True)
-    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.CASCADE)
-    overall_comment = models.CharField(max_length=250)
-    happy ="Happy"
-    indifferent = "Indifferent"
-    unhappy ="Unhappy"
-
+    booking_reference = models.OneToOneField(Booking, to_field='booking_reference', on_delete=models.CASCADE)
+    comment = models.CharField(max_length=250)
+    happy ="happy"
+    indifferent = "indifferent"
+    unhappy ="unhappy"
     overall_feeling = models.CharField(max_length=11,
         choices=(
-        (happy, "Happy"),
-        (indifferent, "Indifferent"),
-        (unhappy, "Unhappy"),
+        (happy, "happy"),
+        (indifferent, "indifferent"),
+        (unhappy, "unhappy"),
         )
     )
 

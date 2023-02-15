@@ -5,48 +5,96 @@ body {
     margin:0;
     padding:0;
 }
-nav {
+
+/* W3 Schools guide - creating dropdown menu */
+/* Navbar container */
+.navbar {
+    overflow: hidden;
     background-color:rgb(48, 48, 252);
-    overflow:hidden;
-}
-ul li {
-    width:18%;
-    margin:0 auto;
-}
-
-ul li a {
-    color:whitesmoke;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-}
-
-.dropdown {
-    float:left;
-    overflow:hidden;
-}
-
-.dropdown .dropbtn {
-    border:none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
     outline: none;
-    color:whitesmoke;
-    background-color:inherit;
-    font-family:inherit;
-    margin:0;
-}
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+    color:blue;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-nav a:hover, .dropdown:hover .dropbtn {
-    background-color:white;
+/* End of W3 guide */
+.nav button {
+    height:100%;
 }
-
 .dropdown-content a{
-    float:none;
     color:rgb(48, 48, 252);
-    text-decoration:none;
-    display:block;
-    text-align:left;
 }
 
-.dropdown-content a:hover{
-    font-weight:600;
+.dropi {
+    color:blue;
+}
+
+#user_drop {
+    right:0;
+}
+
+.nav .dropdown {
+    height:100%;
 }
 
 footer {
@@ -77,6 +125,12 @@ footer a{
 
 #content-container{
     padding-bottom:10rem;
+}
+
+nav i {
+    color:white;
+    font-size:16px;
+    text-align:center;
 }
 
 /**
@@ -251,3 +305,5 @@ Start of my_visits site
     margin:0 auto;
 
 }
+
+

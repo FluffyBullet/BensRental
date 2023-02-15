@@ -17,25 +17,36 @@
     <div id="page-container">
         <div id="content-container">
             <nav>
-                <ul class="top-bar-left icons menu align-center icon-top small-6 dropdown menu" data-dropdown-menu>
-                    <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href="{% url 'details' %}"><i class="fa-solid fa-circle-info"></i>Details</a></li>
-                    <li><a href="{% url 'check_avail' %}"><i class="fa-solid fa-calendar-check"></i>Availability</a></li>
-                    <li><a href="{% url 'make_booking' %}"><i class="fa-solid fa-calendar-plus"></i>Booking</a></li>
+                <div class="navbar icons icon-top">
+                    <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i><br>Home</a></a>
+                    <a href="{% url 'details' %}"><i class="fa-solid fa-circle-info"></i><br>Details</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <i class="fa-solid fa-calendar"></i><br>
+                            Bookings
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropdown-content">
+                            <a href="{% url 'check_avail' %}"><i class="fa-solid fa-calendar-check dropi"></i>  Availability</a>
+                            <a href="{% url 'make_booking' %}"><i class="fa-solid fa-calendar-plus dropi"></i>  Booking</a>
+                        </div>
+                    </div>
                     {% if user.is_authenticated %}
-                        <li>
-                        <a href="#">{{ user.username }}</a>
-                        <ul class="dropdown">
-                            <li><a href="{% url 'my_visits' %}">My Bookings</a></li>
-                            <li><a href="{% url 'account_logout' %}"></i>Sign Out</a></li>
-                        </ul>
-                        </li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <i class="fa-solid fa-user"></i><br>
+                            {{ user.username }}
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                          <div id="user_drop"class="dropdown-content">
+                            <a href="{% url 'my_visits' %}">My Bookings</a>
+                            <a href="{% url 'account_logout' %}"></i>Sign Out</a>
+                          </div>
+                      </div>
                     {% else %}
-                    <li><a href="{% url 'account_login' %}"><i class="fa-solid fa-user"></i>Log-in</a></li>
+                    <a href="{% url 'account_login' %}"><i class="fa-solid fa-user"></i>Log-in</a>
                     {% endif %}
-                </ul>
             </nav>
-
             {% block content %}
             {%endblock%}
         </div>

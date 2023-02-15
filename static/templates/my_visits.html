@@ -20,23 +20,25 @@
                             <div class="editors">
                             <p><button><a href="{% url 'edit_public' comment.booking_reference_id comment.o_comment_id %}"><i class="fa-solid fa-pencil"></i> edit</a></button></p>
 
+                            
+                            <p><button data-open="exampleModal1"><span href="{% url '#' comment.booking_reference}"><i class="fa-solid fa-trash"></i> delete </span></button></p>
+                            </div>
                             <div class="reveal" id="exampleModal1" data-reveal>
-                                <h1>Are you sure you wish to delete?</h1>
-                                <p class="lead">Your couch. It is mine.</p>
-                                <p>testing</p>
+                                <h1></h1>
+                                <p class="lead">Are you sure you wish to delete?
+                                <button href="/delete_comment/{{ comment.o_comment_id}}"><i class="fa-solid fa-trash"></i> delete </button>
+                                </p>
                                 <button class="close-button" data-close aria-label="Close modal" type="button">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                            <p><button data-open="exampleModal1"><span href="{% url '#' comment.booking_reference}"><i class="fa-solid fa-trash"></i> delete </span></button></p>
-                            </div>
+                              {% if visit.booking_reference|lower not in comment.booking_reference_id|lower  %}
+                              <p>
+                                  You have not left a comment yet. <br>
+                                  <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
+                                </p>                            
+                                {% endif %}
                         {% endif%}
-                        {% empty %}
-                        {{ comment.booking_reference_id}}
-                            <p>
-                                You have not left a comment yet. <br>
-                                <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
-                            </p>
                     {% endfor %}
                 </div>
                 <hr>
@@ -74,6 +76,5 @@
     </span>
     
 </div>
-    
 
 {% endblock %}

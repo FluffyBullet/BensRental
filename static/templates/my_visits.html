@@ -8,20 +8,26 @@
         <div class="visit_display">
             <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
             <p>Week charge £{{ visit.charge }} </p>
-            <p>{{visit.booking_reference}}</p>
             <div>
-                {{o_comment.booking_reference_id}}
                 <div>
                     <h6 class="header">Public Comment</h6>
-                    {% if o_comment.booking_reference_id is visit.booking_reference %}
-                        {{ overallcomment.comment }}
-                        <p>True</p>
-                    {% else %}
-                    <p>
-                        You have not left a comment yet. <br>
-                        <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
-                    </p>
-                    {% endif %}
+                    {% for comment in o_comment %}
+                        {% if comment.booking_reference_id|lower == visit.booking_reference|lower %}
+                            
+                            <p> <strong>you posted:</strong></p>
+                            <p class="feedback">{{ comment.comment }}</p>
+                            <div class="editors">
+                            <p><a href="{% url 'edit_public' comment.booking_reference_id comment.o_comment_id %}"><i class="fa-solid fa-pencil"></i> edit</a></p>
+                            <p><span href="{% url '#' comment.booking_reference}"><i class="fa-solid fa-trash"></i> delete </span></p>
+                            </div>
+                        {% endif%}
+                        {% empty %}
+                        {{ comment.booking_reference_id}}
+                            <p>
+                                You have not left a comment yet. <br>
+                                <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
+                            </p>
+                    {% endfor %}
                 </div>
                 <hr>
                 <div>

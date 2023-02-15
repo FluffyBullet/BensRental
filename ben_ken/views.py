@@ -189,3 +189,25 @@ class My_visits(generic.ListView):
             pcomment.save()
             return redirect('/my_visits')
         return render(request,'add_comment.html')
+    
+    def edit_overall_comment(request, booking_reference, o_comment_id):
+        if request.method =="POST":
+            updated_comment = OverallComment(
+                o_comment_id = o_comment_id,
+                booking_reference_id = booking_reference,
+                overall_comment = request.POST["comment"],
+                overall_feeling = request.POST["overall_feeling"],
+            )
+            updated_comment.save()
+            return redirect('/my_visits')
+        return render(request, 'edit_post.html')
+
+    def edit_personal_comment(request, booking_reference):
+        if request.method =="POST":
+            updated_comment = PersonalComment(
+                booking_reference = booking_reference,
+                comment = request.POST["comment"],
+                overall_feeling = request.POST["overall_feeling"],
+            )
+            updated_comment.save()
+        return redirect('/my_visits')

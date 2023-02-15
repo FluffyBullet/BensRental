@@ -234,3 +234,20 @@ Start of my_visits site
 .visit_display > p {
     line-height:2px;
 }
+
+.feedback {
+    background-color:rgba(164, 237, 247, 0.61);
+    border:1px solid black;
+    width:60%;
+    margin:0 auto;
+    text-align:left;
+    padding-left:5%
+}
+
+.editors {
+    width:80%;
+    display:flex;
+    justify-content: space-evenly;
+    margin:0 auto;
+
+}

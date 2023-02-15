@@ -155,7 +155,7 @@ class My_visits(generic.ListView):
     def get(self, request):
         template_name = 'my_visits.html'
         queryset = Booking.objects.filter(booker=request.user.username)
-        public_comment = OverallComment.objects.all()
+        public_comment = OverallComment.objects.order_by('booking_reference')
         context = {
             'visits':queryset,
             'o_comment' : public_comment,
@@ -169,7 +169,7 @@ class My_visits(generic.ListView):
 
         if request.method == "POST":
             ocomment = OverallComment(
-                booking_reference = int(booking_reference),
+                booking_reference_id = booking_reference,
                 comment = request.POST["comment"],
                 overall_feeling = request.POST["overall_feeling"],
             )

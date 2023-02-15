@@ -36,11 +36,11 @@
     <div class="renters_comments">
         <h4 class="header">Customers Reviews</h4>
         <!-- Comments from visitors to be inserted below, to be added -->
-        {% for comments in comment_list %}
+        {% for comments in overallcomment_list %}
         <div class="callout grid-x grid-padding-x align-center-middle text-center">
-          <p>{{ comments.overall_comment }}<br></p>
+          <p>{{ comments.comment }}<br></p>
           <hr>
-          <p>by {{comments.profile}}</p>
+          <p>by {{comments.booking_reference.booker}}</p>
         </div>
         
         {% empty %}

@@ -9,12 +9,13 @@
             <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
             <p>Week charge £{{ visit.charge }} </p>
             <p>{{visit.booking_reference}}</p>
-            <p>{{o_comment.booking_reference}}</p>
             <div>
+                {{o_comment.booking_reference_id}}
                 <div>
                     <h6 class="header">Public Comment</h6>
-                    {% if visit.booking_reference in o_comment %}
-                        {{ o_comment.overall_comment }}
+                    {% if o_comment.booking_reference_id is visit.booking_reference %}
+                        {{ overallcomment.comment }}
+                        <p>True</p>
                     {% else %}
                     <p>
                         You have not left a comment yet. <br>

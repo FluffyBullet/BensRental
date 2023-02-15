@@ -10,7 +10,7 @@ class BookingAdmin(admin.ModelAdmin):
 admin.site.register(Booking, BookingAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('overall_feeling','booking_reference')
+    list_display = ('booking_reference_id','overall_feeling')
     list_filter = ('overall_feeling',)
 
 admin.site.register(OverallComment, CommentAdmin)

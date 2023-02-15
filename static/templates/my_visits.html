@@ -25,7 +25,14 @@
                 </div>
                 <hr>
                 <div>
-                    <h6 class="header">My notes:</h6>
+                    <h6 class="header">My notes: (personal)</h6>
+                    {% for comment in personal_comment_list %}
+                        <p> test</p>
+                    {% empty %}
+                    <p>
+                        You have not left a comment yet. <br>
+                        <a href="{% url 'new_personal_comment' visit.booking_reference %}">Click here to add one!.</a>
+                    {% endfor %}
                 </div>
             </div>
         <div>

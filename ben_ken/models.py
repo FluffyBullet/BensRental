@@ -70,7 +70,7 @@ class OverallComment(models.Model):
     
 class PersonalComment(models.Model):
     p_comment_id = models.AutoField(primary_key=True, unique=True)
-    booking_reference = models.ForeignKey(Booking, to_field='booking_reference', on_delete=models.CASCADE)
+    booking_reference = models.ForeignKey(Booking, to_field="booking_reference", on_delete=models.CASCADE)
     personal_comment = models.CharField(max_length=250)
     happy ="Happy"
     indifferent = "Indifferent"

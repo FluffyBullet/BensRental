@@ -156,9 +156,11 @@ class My_visits(generic.ListView):
         template_name = 'my_visits.html'
         queryset = Booking.objects.filter(booker=request.user.username)
         public_comment = OverallComment.objects.order_by('booking_reference')
+        personal_comment = PersonalComment.objects.order_by('booking_reference')
         context = {
             'visits':queryset,
             'o_comment' : public_comment,
+            'p_comment' : personal_comment,
         }
         return render(request,'my_visits.html', context)
     
@@ -177,6 +179,13 @@ class My_visits(generic.ListView):
             return redirect('/my_visits')
         return render(request,'add_comment.html')
 
-    def add_personal_comment(self,request):
-        
+    def add_personal_comment(request, booking_reference):
+        if request.method == "POST":
+            pcomment = PersonalComment(
+                booking_reference = booking_reference,
+                comment = request.POST["comment"],
+                overall_feeling = request.POST["overall_feeling"],
+            )
+            pcomment.save()
+            return redirect('/my_visits')
         return render(request,'add_comment.html')

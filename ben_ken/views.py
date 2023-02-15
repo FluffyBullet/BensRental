@@ -195,7 +195,7 @@ class My_visits(generic.ListView):
             updated_comment = OverallComment(
                 o_comment_id = o_comment_id,
                 booking_reference_id = booking_reference,
-                overall_comment = request.POST["comment"],
+                comment = request.POST["comment"],
                 overall_feeling = request.POST["overall_feeling"],
             )
             updated_comment.save()

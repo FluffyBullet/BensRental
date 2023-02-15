@@ -182,8 +182,8 @@ class My_visits(generic.ListView):
     def add_personal_comment(request, booking_reference):
         if request.method == "POST":
             pcomment = PersonalComment(
-                booking_reference = booking_reference,
-                comment = request.POST["comment"],
+                booking_reference_id = booking_reference,
+                personal_comment = request.POST["comment"],
                 overall_feeling = request.POST["overall_feeling"],
             )
             pcomment.save()

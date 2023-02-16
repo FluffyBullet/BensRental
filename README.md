@@ -205,14 +205,24 @@ To Complete all task required of the website and linking Accounts, Bookings, ToD
 ## Testing
 ### Test Driven Development (TDD)
 ### Behaviour Driven Development (BDD)
+
+Throughout the development course, I have selected Behaviour Driven Development to ensure each function works the expected values.
+including:
+
+anchor tags to open links on new tab:
+1. testing with:
+    1. footer links, airbnb and directholidayhomes
+        1. both links open into a new tab as expected
+    1. Index page, 
+
+
 ****
 ## Bugs
 
 ### Bugs to be Fixed
 
-details.html page started with a library of photo's to be displayed, but with sizing and formatting - I chose to use similar to my previous project in JavaScript. Having an active tile and looping through whilst changing their style tags.
+nav bar icons are mis-aligned as they have dropdown icons and further information. This also displays incorrectly when a user is logged out. 
 
-However, creating this - console is advising $.fn.foundation is not selectable - issue with the CSS Framework and I believe attempting to use jQuery. This is to be reviewed at a later date.
 ### Bugs Fixed
 
 Bug found when viewing website on herokuapp link, but showing no styling and images. This was caused by "MIME" type not recognising text/css as a type and following the walkthrough for my example - the website was looking for the requested images on cloudinary static instead of root directory.
@@ -222,6 +232,12 @@ Following a mention on stack overflow, I found a setting to import to setting.py
 import mimetypes
 mimetypes.add_type("text/css",".css",True)
 ```
+
+details.html page started with a library of photo's to be displayed, but with sizing and formatting - I chose to use similar to my previous project in JavaScript. Having an active tile and looping through whilst changing their style tags.
+1. corrected by the below, javascript could not function without being initialized.
+
+However, creating this - console is advising $.fn.foundation is not selectable - issue with the CSS Framework and I believe attempting to use jQuery. This is to be reviewed at a later date.
+1. fixed by initializing foundation at the bottom of index page using custom script tag and loading the document.
 
 ****
 ## Dev Log

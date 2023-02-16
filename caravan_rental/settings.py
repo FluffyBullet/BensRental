@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'foundation',
     'ben_ken',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 SITE_ID = 1

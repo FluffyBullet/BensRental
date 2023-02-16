@@ -214,8 +214,7 @@ class My_visits(generic.ListView):
         return redirect('/my_visits')
     
     def delete_public(request,o_comment_id):
-        if request.method == "POST":
-            comment = get_object_or_404(OverallComment, o_comment_id)
-            comment.delete()
-            return redirect('/my_visits')
-        return render(request, 'my_visits.html')
+        comment = get_object_or_404(OverallComment, o_comment_id = o_comment_id)
+        print(comment)
+        comment.delete()
+        return redirect('/my_visits')

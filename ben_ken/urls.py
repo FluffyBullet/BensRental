@@ -13,6 +13,6 @@ urlpatterns = [
     path('add_comment/personal/<int:booking_reference>', views.My_visits.add_personal_comment, name="new_personal_comment"),
     path('edit_comment/overall/<int:booking_reference>/<int:o_comment_id>', views.My_visits.edit_overall_comment, name="edit_public"),
     path('edit_comment/personal/<int:booking_reference>/<int:p_comment_id>', views.My_visits.edit_personal_comment, name="edit_personal"),
-    path('delete_comment/<int:p_comment_id>', views.My_visits.delete_public, name="delete_public_comment"),
+    path('delete_comment/<int:o_comment_id>', views.My_visits.delete_public, name="delete_public_comment"),
     path('accounts/', include('allauth.urls')),
 ]

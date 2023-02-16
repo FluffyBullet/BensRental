@@ -42,7 +42,7 @@ body {
   }
   
   /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
+  .navbar a:hover, .dropdown:hover .dropbtn, .nav a i:hover {
     background-color: white;
     color:blue;
   }
@@ -317,4 +317,42 @@ Start of my_visits site
     padding-top:15px;
 }
 
+@media screen and (min-width: 600px){
+    nav {
+        display:flex;
+        justify-content: center;
+        background-color:rgb(48, 48, 252);
+    }
 
+    /* index Page */
+    #hero_text {
+        width:48%;
+    }
+    #hero {
+        display:flex;
+        align-items:center;
+    }
+    #index_bottom {
+        display:flex;
+        align-items:center;
+    }
+    #index_bottom hr {
+        display:none;
+    }
+
+    /* details Page */
+    .picture-div {
+        height:75vh
+    }
+    #images {
+        position:relative;
+        margin-top:10px;
+        height:600px;
+    }
+    .picture img {
+        max-height:100%;
+    }
+    #user_drop {
+        right:auto;
+    }
+}

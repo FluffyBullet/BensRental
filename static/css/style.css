@@ -135,6 +135,12 @@ nav i {
 General css styles
 **/
 
+form {
+    width:80%;
+    margin:0 auto;
+}
+
+
 hr {
     width:60%;
     color: rgba(37, 36, 36, 0.863);

@@ -7,8 +7,9 @@
     <hr>
     <ul class="vertical menu accordion-menu" data-accordion-menu>
         <li href="#">
+            <div>
             <p class="text-center">Admin section only - Add new year</p>
-            <ul class="menu vertical nested">
+        
                 <form action="{% url 'check_avail'%}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="booking_form">
@@ -25,7 +26,7 @@
                         </div>
                     </div>
                 </form>
-            </ul>
+            </div>
         </li>
     </ul>
     <hr>
@@ -75,6 +76,20 @@
             <h2>Week {{ week.week_booking }}</h2>
             <h3>of year {{ week.year_booking }}</h3>
             <p>Booked by: {{week.booker}}</p>
+            <div id="edit_booking">
+                <div>
+                    <a href="{% url 'update_booking' week.booking_reference %}">
+                    <i class="fa-solid fa-pen"></i>
+                <p>Update </p>
+            </a>
+                </div>
+                <div>
+                    <a href="{% url 'cancel_booking' week.booking_reference %}">
+                    <i class="fa-solid fa-square-minus"></i>
+                <p>Cancel booking </p>
+                </a>
+                </div>
+            </div>
         </div>
             {% else %}
             <div class="avail_check callout alert">

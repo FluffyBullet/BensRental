@@ -48,6 +48,9 @@
                     {% endfor %}
                 {% endif %}    
                 <hr>
+                <div >
+                   Overall Comment: <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!</a>
+                </div>
         </div>
                 <div>
                     <h6 class="header">My notes: (personal)</h6>
@@ -57,6 +60,20 @@
                         <p>
                             {{comment.personal_comment}}
                         </p>
+                        <p><button><a href="{% url 'edit_personal' comment.booking_reference_id comment.p_comment_id %}"><i class="fa-solid fa-pencil"></i> edit</a></button></p>
+
+                        
+                        <p><button data-open="exampleModal2"><span href="{% url '#' comment.booking_reference comment.p_comment_id}"><i class="fa-solid fa-trash"></i> delete </span></button></p>
+                        </div>
+                        <div class="reveal" id="exampleModal2" data-reveal>
+                            <h1></h1>
+                            <p class="lead">Are you sure you wish to delete?
+                            <button><a href="{% url 'delete_personal_comment' comment.p_comment_id %}"><i class="fa-solid fa-trash"></i> delete </a></button>
+                            </p>
+                            <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
                         </div>
                         {% endif %}
@@ -67,7 +84,7 @@
                     </div>
                     {% endfor %}
                     <hr>
-                    <p><a href="{% url 'new_personal_comment' visit.booking_reference %}">Add a new comment here</p></a>
+                    <p>Personal Comment: <a href="{% url 'new_personal_comment' visit.booking_reference %}">Add a new comment here</p></a>
                     </div>
             </div>
         <div>

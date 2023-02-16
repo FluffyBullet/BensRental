@@ -218,3 +218,8 @@ class My_visits(generic.ListView):
         print(comment)
         comment.delete()
         return redirect('/my_visits')
+    
+    def delete_personal(request,p_comment_id):
+        comment = get_object_or_404(PersonalComment, p_comment_id = p_comment_id)
+        comment.delete()
+        return redirect('/my_visits')

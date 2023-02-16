@@ -202,20 +202,20 @@ class My_visits(generic.ListView):
             return redirect('/my_visits')
         return render(request, 'edit_post.html')
 
-    def edit_personal_comment(request, booking_reference, p_comment_id):
+    def edit_personal_comment(request,booking_reference,p_comment_id):
         if request.method =="POST":
             updated_comment = PersonalComment(
                 p_comment_id = p_comment_id,
-                booking_reference = booking_reference,
-                comment = request.POST["comment"],
+                booking_reference_id = booking_reference,
+                personal_comment = request.POST["comment"],
                 overall_feeling = request.POST["overall_feeling"],
             )
             updated_comment.save()
-        return redirect('/my_visits')
+            return redirect('/my_visits')
+        return render(request, 'edit_post.html' )
     
     def delete_public(request,o_comment_id):
         comment = get_object_or_404(OverallComment, o_comment_id = o_comment_id)
-        print(comment)
         comment.delete()
         return redirect('/my_visits')
     

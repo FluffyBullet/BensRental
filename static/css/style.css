@@ -100,8 +100,6 @@ body {
 footer {
     background-color:rgb(48, 48, 252);
     color:white;
-    position:absolute;
-    bottom:0;
     height:10rem;
     width:100vw; 
     padding-top:10px;

@@ -301,7 +301,14 @@ Start of my_visits site
     display:flex;
     justify-content: space-evenly;
     margin:0 auto;
+    padding: 10px 0;
 
+}
+
+.card {
+    width:80%;
+    margin:0 auto;
+    padding-top:15px;
 }
 
 

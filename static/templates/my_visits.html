@@ -7,94 +7,88 @@
 <div class="container">
     {% for visit in visits%}
 
-        <div class="text-center">
-        <h3><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>  
-        <p>Week charge £{{ visit.charge }} </p>
-            <div id="public_comment">
-                {% if visit.booking_reference not in o_comment.booking_reference_id  %}
-
-                    <p>
-                        You have not left a comment yet. <br>
-                        <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
-                    </p>
-
-                {% else %}
-
-                    {% for comment in o_comment%}
-
-                        {% if comment.booking_reference_id|lower == visit.booking_reference|lower %}
-                        <p> <strong>you posted:</strong></p>
-                        <p class="feedback">{{ comment.comment }}</p>
-                        <div class="editors">
-                        <p><button><a href="{% url 'edit_public' comment.booking_reference_id comment.o_comment_id %}"><i class="fa-solid fa-pencil"></i> edit</a></button></p>
-
-                        
-                        <p><button data-open="delete_modal_{{o_comment_id}}"><span href="{% url '#' comment.booking_reference comment.o_comment_id}"><i class="fa-solid fa-trash"></i> delete </span></button></p>
-                        </div>
-                        <div class="reveal" id="delete_modal_{{o_comment_id}}" data-reveal>
-                            <h1></h1>
-                            <p class="lead">Are you sure you wish to delete?
-                                <p>{{comment.o_comment_id}}</p>
-                            <button><a href="{% url 'delete_public_comment' comment.o_comment_id %}"><i class="fa-solid fa-trash"></i> delete </a></button>
-                            </p>
-                            <button class="close-button" data-close aria-label="Close modal" type="button">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        
-                        
-                        {% endif %}
-
-                    
-                    {% endfor %}
-                {% endif %}    
-                <div >
-                    Overall Comment: <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!</a>
-                </div>
+    <div class="text-center card">
+        <div class="card-divider">
+            <h3 class="card-divider"><strong>Week: {{ visit.week_booking }} of {{ visit.year_booking }}</strong></h3>
+            <p>Week charge £{{ visit.charge }} </p>
+        </div>
+        <div id="public_comment" class="card-section">
+            {% if visit.booking_reference not in o_comment.booking_reference_id %}
+            <p>
+                You have not left a comment yet. <br>
+                <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add one!.</a>
+            </p>
+            {% else %}
+            {% for comment in o_comment%}
+            {% if comment.booking_reference_id|lower == visit.booking_reference|lower %}
+            <p> <strong>Public Comment:</strong></p>
+            <p class="feedback">{{ comment.comment }}</p>
+            <div class="editors">
+                <button><a href="{% url 'edit_public' comment.booking_reference_id comment.o_comment_id %}"><i
+                            class="fa-solid fa-pencil"></i> edit</a></button>
+                <button data-open="delete_modal_{{comment.o_comment_id}}"><span
+                        ><i class="fa-solid fa-trash"></i> delete </span></button>
             </div>
-            <hr>
-                <div>
-                    <h6 class="header">My notes: (personal)</h6>
-                    {% for comment in p_comment %}
+            <div class="reveal" id="delete_modal_{{comment.o_comment_id}}" data-reveal>
+                <h1></h1>
+                <p class="lead">Are you sure you wish to delete?<br>
+                <p>{{comment.o_comment_id}}</p>
+                <button><a href="{% url 'delete_public_comment' comment.o_comment_id %}"><i
+                            class="fa-solid fa-trash"></i> delete </a></button>
+                </p>
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            <div>
+                Overall Comment: <a href="{% url 'new_public_comment' visit.booking_reference %}">Click here to add
+                    one!</a>
+                    <hr>
+                    <div class="text-center">
+                        <h6 class="header">My notes: (personal)</h6>
+                        {% for comment in p_comment %}
                         {% if comment.booking_reference_id|lower == visit.booking_reference|lower %}
                     </div>
-                    <div class="personal_comment">    
+                    <div class="personal_comment">
                         <p class="feedback">
                             {{comment.personal_comment}}
                         </p>
-                        <div class="editors">
-                        <p><button><a href="{% url 'edit_personal' comment.booking_reference_id comment.p_comment_id %}"><i class="fa-solid fa-pencil"></i> edit</a></button></p>
-                        
-                        <p><button data-open="modal_for_{{comment.p_comment_id}}"><i class="fa-solid fa-trash"></i> delete</button></p>
+            </div>
+            <div class="editors">
+                <button><a href="{% url 'edit_personal' comment.booking_reference_id comment.p_comment_id %}"><i
+                    class="fa-solid fa-pencil"></i> edit</a></button>
+                    <button data-open="modal_for_{{comment.p_comment_id}}"><i class="fa-solid fa-trash"></i>
+                        delete</button>
                         <div class="reveal" id="modal_for_{{comment.p_comment_id}}" data-reveal>
                             <h1></h1>
-                            <p class="lead">Are you sure you wish to delete?
-                            <p>{{comment.p_comment_id}}</p>    
-                            <button><a href="{% url 'delete_personal_comment' comment.p_comment_id %}"><i class="fa-solid fa-trash"></i> delete </a></button>
-                            </p>
-                            <button class="close-button" data-close aria-label="Close modal" type="button">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                            <p class="lead">Are you sure you wish to delete?<br>
+                                <p>{{comment.p_comment_id}}</p>
+                                <button><a href="{% url 'delete_personal_comment' comment.p_comment_id %}"><i
+                                    class="fa-solid fa-trash"></i> delete </a></button>
+                                </p>
+                                <button class="close-button" data-close aria-label="Close modal" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            
+                            {% endif %}
                         </div>
+                        {% endfor %}
+                        <p>
+                            Personal Comment: <br>
+                            <a href="{% url 'new_personal_comment' visit.booking_reference %}">Add a new comment here</a>
+                        </p>
                     </div>
-
-                        </div>
-                        {% endif %}
-                    {% empty %}
-                    <p>
-                        You have not left a comment yet. <br>
-                        <a href="{% url 'new_personal_comment' visit.booking_reference %}">Click here to add one!.</a>
-                    </div>
-                    {% endfor %}
-                    <p>
-                        Personal Comment: <br>
-                        <a href="{% url 'new_personal_comment' visit.booking_reference %}">Add a new comment here</a>
-                    </p>
-                </div>
-                <hr>
-            </div>
-        <div>
-    {% endfor %}
+                        <hr>
+        </div>
+    
+        {% endfor %}
+        </div>
+        </div>
+    </div>
 </div>
 <div class="pagination grid-x grid-padding-x align-center-middle text-center">
     <span class="step-links">
@@ -103,18 +97,18 @@
         <a href="my_visits?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
     </span>
-    
+
     <span class="current">
         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
     </span>
-    
+
     <span class="step-links">
         {% if page_obj.has_next %}
         <a href="my_visits?page={{ page_obj.next_page_number }}">next</a>
         <a href="my_visits?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
-    
+
 </div>
 
 {% endblock %}

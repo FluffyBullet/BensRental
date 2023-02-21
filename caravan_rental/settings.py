@@ -16,6 +16,7 @@ import os
 if os.path.isfile('env.py'):
     import env
 
+import mimetypes
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'static/templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['bensrental.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'caravan_rental.urls'
@@ -88,6 +90,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'caravan_rental.wsgi.application'
 
+mimetypes.add_type("text/css",".css", True)
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

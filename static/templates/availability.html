@@ -31,10 +31,12 @@
     </ul>
     <hr>
     {% endif %}
-    {% if messages == messages.success %}
-    <div class="messages">
-        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-    </div>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}
+                <script>alert("{{ message }}")</script>
+            {% endif %}
+        {% endfor %}
     {% endif %}
     {% for week in booking_list %}    
         {% if week.if_available == True %}

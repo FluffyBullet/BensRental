@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
 <div>
     <h2 class="header">Requesting a booking:</h2>
 </div>
@@ -21,11 +21,13 @@
                 <input type="week" id="week_selection" name="week_selection" class="input-group-field week">
             </div>
         </div>
-        {% if messages == messages.warning%}
-        <div class="messages">
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-        </div>
-        {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}
+                <script>alert("{{ message }}")</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
         <div class="attendees">
             <p class="header">Maximum 6 people</p>
             <div class="input-group attendance">

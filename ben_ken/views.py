@@ -70,8 +70,9 @@ class Availability(generic.ListView):
                 charge = stay.charge,
                 if_available = False,
             )
+            messages.success(request,'Your booking details have been updated')
             update.save()
-            return redirect('/availability')
+            return redirect('/availability', messages)
         return render(request,'update_booking.html', context)
     
     def cancel(request, booking_reference):
@@ -95,7 +96,8 @@ class Availability(generic.ListView):
                 if_available = True,
             )
             cancel.save()
-            return redirect('/availability')
+            messages.warning(request, 'Sorry to see you cancel, see you soon!')
+            return redirect('/availability', messages)
         return render(request,'cancel_booking.html', context)
 
 

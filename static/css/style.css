@@ -317,6 +317,13 @@ Start of my_visits site
     padding-top:15px;
 }
 
+/* account pages */
+
+#login_intro {
+    text-align:center;
+    padding: 20px 10px;
+}
+
 @media screen and (min-width: 600px){
     nav {
         display:flex;

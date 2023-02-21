@@ -359,4 +359,18 @@ Start of my_visits site
     #user_drop {
         right:auto;
     }
+    .renters_comments { 
+        width:60%;
+        margin:0 auto;
+    }
+    .renters_comments div {
+        margin:0 auto;
+        display:block;
+        margin-top:10px;
+    }
+
+    #left {
+        display:flex;
+        justify-content:flex-end;
+    }
 }

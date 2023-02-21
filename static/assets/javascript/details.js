@@ -14,7 +14,6 @@ function nextpic(){
     if (n === 15){
         n = 15-n;
     };
-    console.log(n)
     imageDisplay.style.display="none";
     imageDisplay = imageParent.children[n];
     imageDisplay.style.display="block";

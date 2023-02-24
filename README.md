@@ -209,11 +209,80 @@ To Complete all task required of the website and linking Accounts, Bookings, ToD
 Throughout the development course, I have selected Behaviour Driven Development to ensure each function works the expected values.
 including:
 
-anchor tags to open links on new tab:
+Anchor tags to open links on new tab:
 1. testing with:
     1. footer links, airbnb and directholidayhomes
         1. both links open into a new tab as expected
-    1. Index page, 
+    1. Home page links, owner details (e-mail), Wight link website and Red Funnel
+        1. Under owner details, the link ben@kennedy.com uses the default mail provider to send an e-mail to the address provided.
+        1. "Getting there", Wight Link opens the website page on a new tab of the browser.
+        1. "Getting there", Red Funnel opens the website page on a new tab of the browser.
+    1. "Getting there", Google maps insert:
+        1. "View larger map" - clicking on link opens a new tab in the selected browser.
+        1. Zoom Icons - Both zoom in and out work at Browser level.
+
+Rotation of images on details page:
+1. "Caravan Images" totals 15 images, but for better display to the user the page is set up with a single image and arrows to move to next and previous.
+    1. Make sure the link does not break on images to be displayed:
+        1. Pressing forward arrow 15+ times after loading page
+            1. Pressed the forward arrow 19 times - the images successfully loop through themselves without error or not displaying images.
+        1. Pressing back arrow 15+ times after loading page
+            1. Pressed the back arrow 16 times, the images succesfully loop through themselves without error or not displaying images.
+        1. Both above have also been tested in mobile mode with "iPhone SE" as the selected browser - also works as expected
+
+Bookings page: 
+1. Display of availability
+    1. As not logged in, the website should display information to show what weeks are available or taken.
+        1. links show as available with green background, option to book and the charge for the week below.
+    1. As a user/requester of the page, the website should display similar to the not-logged-in, but with my bookings I should be able to update the information or cancel
+        1. Login: fluffy, password: Password321
+        1. Currently, 1 week and 4 are available showing as green.
+        1. Week 2 is boooked by another user - showing text of "Sorry, this week is not available"
+        1. Week 10 is booked under the fluffy account - links at the bottom for Update and Cancel booking.
+    1. As an admin, I expect to see similar to a user/requester, but on weeks booked I can see who requested this booking. Then choices below to update or cancel the booking 
+        1. Login: ben, password: kennedy
+    1. All above links display as expected.
+1. Amending my booking
+    1. As a user/requester,I would like to amend my booking:
+        1. Updating my previous entries.
+            1. When selecting the "update" icon on the availability form, the user is forward onto a page which allows them to change their previous entries. The form is pre-populated from their last submission.
+            1. When selecting the "cancel booking" you are taken to another page headed as "cancel booking". This page is for secure click to ensure the user did not cancel by mistake.. Completing the cancel booking process, the user is taken back to the availability page with an alert to say "sorry you cancelled your booking, hope to see you soon".
+            1. All test above work as expected.
+1. Booking
+    1. As not logged in, the page is to display a request of the user to log in to view this page.
+        1. This works as expected.
+        1. Clicking on the login or signup page links to the correct sites - imported from django-allauth 
+    1. As a user/requester and admin, I expect a form requesting for details, with entry fields available for entry.
+        1. form validation to be added.
+        1. completion of request then pressing submit request re-directs the user to the availability page and displays an alert to advise the booking has been registered.
+    1. Booking a week already selected
+        1. If selecting a week already booked, on submit request, an error is displayed to advise this week has already been chosen, please chose another.
+
+1. Making a comment
+    1. When a user is logged in (provided by allauth), they are directed to "my visits" page, which is alos accessible by hovering over the user icon. This page displays tables per visit booked from the user, with option to select  for a public comment and personal comment.
+    1. Public Comment - 
+        1. This comment is to be displayed on the "details" page after the user saves their comment. 
+        1. Clicking on the "click here to add one!" forwards the user onto adding a comment page, with overall rating too.
+        1. Typing in the users text then clicking "add comment" button, the comment is saved to the database and displayed on the details page, also the top section of the visit.
+    1. Personal comment - 
+        1. Similar with personal notes, clicking on "add a new comment here" the user will be transfered on the same page. Saving of this comment will display in the bottom section.
+    1. Editing comments - 
+        1. Under each comment made by the user for the posting, two icons will be available for the user to select. Edit and Delete.
+        1. Clicking on edit transfers the user to the similar page as creating a comment but with updated headers.
+        1. Upon editing the comment, the user is transfered back to "my visits" page with an alert to confirm the update has been processed.
+    1. Deleting comments - 
+        1. The delete icon is displayed as a bin icon, at the bottom right of the comment text. Clicking on this opens a modal seeking confirmation for deletion.
+        1. After confirming the deletion, the comment is removed from the stay view and database.
+    1. All above test have been made and work as noted.
+
+1. Creating new bookings (admin)
+    1. As an admin, the owner needs to add new dates for selection to their holiday home. To complete this, when logged in as an admin a panel will display at the top of the page.
+    1. The admin/staff can enter the year for creation in a number field then "create" button. This will create weeks for the year selected (53 weeks).
+    1. The above test have been made and work as noted.
+
+1. Process of information
+    1. 
+
 
 
 ****

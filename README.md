@@ -280,8 +280,6 @@ Bookings page:
     1. The admin/staff can enter the year for creation in a number field then "create" button. This will create weeks for the year selected (53 weeks).
     1. The above test have been made and work as noted.
 
-1. Process of information
-    1. 
 
 
 
@@ -327,6 +325,17 @@ Setting up the home page, I connected to the booking table with a queryset, but 
 
 ### Deployment
 ### Creating a copy
+
+For a copy of this project, you can select "Fork" on the top right of the [project repository](https://github.com/FluffyBullet/BensRental). On the dropdown displayed after clicking the button, the bottom will show "+ Create a new fork"
+
+This will create a repository in your own github, but will require the following to be displayed as a website:
+
+1. Create a env.py file in your IDE to include the following variables:
+    1. Database URL - provided by your database provider, in example on this course I used ElephantSQL
+    1. Secret Key - This can be a secure string/pattern chosen by yourself or a random generated password.
+1. Add a new pipeline on Heroku, then configuring your "VARS" in the settings tab to include the above, along with PORT and value of 8000.
+
+
 ### Progression log
 
 After creating two templates and base template, I used w3 validators for HTML and CSS written on this project.

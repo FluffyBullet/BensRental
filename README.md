@@ -28,6 +28,9 @@
 
 ## Introduction
 
+Link to repository site - https://github.com/FluffyBullet/BensRental
+Link to live website - https://bensrental.herokuapp.com
+
 Owners of Caravans, Chalet's, Holiday homes hire their accommodations to others whilst not in use to provide extra income, contributing to the upkeep cost of their property. In this instance, my friend Ben Kennedy owns a Caravan in Isle of Wight, United Kingdom advertising over [Air BnB](#air-bnb) and [DirectHolidayHomes](#directholidayhomes) but continuously checking between sites on bookings and making notes for task to be completed, i.e request for payment, send welcome package e-mail.
 
 As part of my 5 course, level 5 Diploma degree with CodeInstitute, I intend to use my fourth project as an example of a solution for owners and hiring systems and holiday makers. 

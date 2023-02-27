@@ -362,6 +362,7 @@ Jason Reynolds - Trouble shooting conversations to approach bugs and errors
 ## References
 
 Fix found from Stack Overflow for MIME issue - https://stackoverflow.com/questions/22839278/python-built-in-server-not-loading-css
+Checking code is compatible with PEP8 - https://www.tutorialspoint.com/online_python_formatter.htm
 
 ### Languages, Libraries and Frameworks used
 

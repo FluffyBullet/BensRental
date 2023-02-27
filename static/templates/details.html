@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content%}
 {% load static %}
-<script src="{% static '/assets/javascript/details.js' %}" defer="True"></script>
 
 <div id="caravan_details">
     <h2 class="header"> Caravan Images</h2>
@@ -51,5 +50,38 @@
         {% endfor%}
     </div>
 </div>
+
+<script defer="True">
+    let n = 0
+var imageDisplay = document.getElementsByClassName('caravan_image')[n];
+
+imageDisplay.style.display = "inline-block";
+let previousImage = document.getElementById('left');
+let nextImage = document.getElementById('right');
+let imageParent = document.getElementById('host');
+
+nextImage.addEventListener('click',nextpic);
+previousImage.addEventListener('click',lastpic);
+
+function nextpic(){
+    n = n+1
+    if (n === 15){
+        n = 15-n;
+    };
+    imageDisplay.style.display="none";
+    imageDisplay = imageParent.children[n];
+    imageDisplay.style.display="block";
+}
+
+function lastpic(){
+    n = n - 1
+    if (n === 0-1){
+        n = 15+n;
+    };
+    imageDisplay.style.display="none";
+    imageDisplay = imageParent.children[n];
+    imageDisplay.style.display="block";
+}
+</script>
 
 {%endblock%}
